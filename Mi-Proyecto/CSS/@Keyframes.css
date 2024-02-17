@@ -1,0 +1,80 @@
+@keyframes desplazamientoi {
+    
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes desplazamientod {
+    
+    to {
+        transform: translateX(50%);
+    }
+}
+
+/*Desplazamiento de login para abajo */
+@keyframes desplazarlby {
+
+    0% {
+        transform: translateY(0);
+    }
+    
+    100% {
+        transform: translateY(1.4rem); /* Mueve la imagen 30px hacia abajo */
+    }
+}
+/*Desplazamiento de login para subir */
+@keyframes desplazarlsy {
+    0% {
+        transform: translateY(1.4rem); /* Posición desplazada hacia abajo */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a la posición original */
+    }
+}
+
+/* Definición de la animación para achicar la cabecera */
+@keyframes reduceHeight {
+    from {
+        height: 160px;
+    }
+
+    to {
+        height: 6rem;
+    }
+}
+
+/* Definición de la animación de aumentar la cabecera */
+@keyframes increaseHeight {
+    from {
+        height: 6rem;
+        /* Altura reducida */
+    }
+
+    to {
+        height: 160px;
+        /* Altura original */
+    }
+}
+
+/*Agrandar imagen */
+@keyframes increaseImg {
+    from {
+        height: 25px;
+    }
+
+    to {
+        height: 30px;
+    }
+}
+/*Reducir imagen*/
+@keyframes reduceImg {
+
+    from {
+        height: 30px;
+    }
+
+    to {
+        height: 25px;
+    }
+}
