@@ -1,0 +1,105 @@
+
+/* Configuramos lo que pasa cuando la pantalla es mayor a 1200px */
+@media (min-width: 1200px) {
+
+    .Cabecera {
+
+        height: 2rem;
+        animation: increaseHeight 0.5s forwards;
+        /* Aplicamos animación de aumento de altura */
+
+    }
+
+    #Logo {
+
+        height: 2rem;
+        animation: increaseHeight 0.5s forwards;
+    }
+
+    #Login {
+
+        animation: desplazarlsy .5s forwards;
+                
+    }
+
+    #Menu {
+
+        display: none;
+
+    }
+
+    .Cabecera2 {
+
+        display: none;
+    }
+
+}
+
+/* Configuramos lo que pasa cuando la pantalla es menor a 1250px */
+@media (max-width:1250px) {
+
+    .Nav {
+
+        display: none;
+
+    }
+
+    #Login {
+        display: flex;
+        position: absolute;
+        right: 0px;
+    }
+
+    #BarraBusqueda {
+
+        display: none;
+
+    }
+
+    #ImgBarraBusqueda {
+
+        display: none;
+
+    }
+}
+
+/* Configuramos lo que pasa cuando la pantalla es menor a 1200px */
+@media (max-width: 1200px) {
+    .Cabecera {
+        height: 6rem;
+        animation: reduceHeight 0.5s forwards;
+    }
+
+    #Logo {
+
+        height: 6rem;
+        animation: reduceHeight 0.5s forwards;
+    }
+
+    #Menu {
+
+        display: block;
+        position: absolute;
+        top: 1.8rem;
+        right: 80px;
+        opacity: 1;
+    
+    } 
+
+    #Menu svg {
+        height: 30px;
+        width: 30px;
+        
+    }
+
+    #Login{
+
+        animation: desplazarlby .5s forwards;
+    }
+
+    .redes-sociales{
+
+        display: none;
+
+    }
+}

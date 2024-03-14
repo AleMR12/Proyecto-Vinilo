@@ -1,0 +1,12 @@
+/* Cabecera principal de nuestra página */
+.Cabecera {
+    background-image: url(../Imagenes/Extras/FondoCabecera.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Posicionamos la imagen en el centro verticalmente */
+    background-position: center;
+    background-position: right;
+    display: flex;
+    height: 2rem;
+    color: white;
+}
