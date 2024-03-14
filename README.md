@@ -1,1 +1,0 @@
-# Directorio-Practica-1
