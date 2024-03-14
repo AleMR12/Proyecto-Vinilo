@@ -1,62 +1,88 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #111;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
+    padding: 0;
+    background-color: #f2f2f2;
+    background-image: url(/Imagenes/Extras/FondoRecuperarContraseña.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Ajustar la altura del body al tamaño de la ventana */
+    overflow: hidden; /* Ocultar la barra de desplazamiento vertical */
+    display: flex; /* Utilizar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    color: white;
     text-align: center;
 }
 
-.content {
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+.container {
+    max-width: 400px;
+    background-color: rgba(35, 35, 35, 0.674); /* Negro claro con opacidad */
+    padding: 40px; /* Aumentar el espacio interno */
+    border-radius: 10px; /* Hacer los bordes más redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Aumentar la profundidad de la sombra */
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 8rem; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Para mantener la proporción de la imagen */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    z-index: 1000; /* Asegura que el logo esté sobre el contenido */
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px; /* Espacio adicional debajo del título */
 }
 
 p {
-    margin-bottom: 20px;
+    color: #ffffff;
+    margin-bottom: 30px; /* Aumentar el espacio entre el párrafo y el formulario */
 }
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
+form {
+    text-align: center;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Reducir el espacio entre etiquetas */
 }
 
 input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #666;
+    transition: border-color 1s ease; /* Transición suave para el color del borde */
 }
 
+input[type="email"]:focus {
+    border-color: #ff6600; /* Cambiar el color del borde cuando se enfoca */
+}
+
+
 button {
-    background-color: #ff4500;
-    color: #fff;
+    background-color: #ff6600;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px; /* Aumentar el espacio interno */
+    border-radius: 8px; /* Hacer los bordes más redondeados */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #cc3700;
+    background-color: #e65c00;
+}
+
+button:active {
+    background-color: #cc5200;
 }

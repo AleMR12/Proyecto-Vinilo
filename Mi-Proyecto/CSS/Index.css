@@ -43,11 +43,16 @@
 .Nav a:hover {
     transform: scale(1.2);
 }
+#Logo{
 
-/* Logo de nuestra pagina */
+    padding-left: .7rem;
 
-#Logo {
-    padding: 0 0 0 10px;
+}
+
+#aLogo{
+
+    display: inline-block;
+    
 }
 
 #BBIS {
@@ -412,7 +417,7 @@ footer {
 
 .menu-footer a:hover{
 
-    color: rgb(192, 192, 192);
+    color: rgb(177, 177, 177);
 
 }
 

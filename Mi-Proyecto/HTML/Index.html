@@ -5,21 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Vinilo</title>
+    
     <!-- Ponemos el icono la ventana -->
     <link rel="icon" type="image/x-icon" href="/Imagenes/Logo.png">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
     <!--Agregamos los CSS-->
     <link rel="stylesheet" type="text/css" href="/CSS/Index.css">
     <link rel="stylesheet" type="text/css" href="/CSS/@Keyframes.css">
     <link rel="stylesheet" type="text/css" href="/CSS/@Media.css">
     <link rel="stylesheet" type="text/css" href="/CSS/Reset.css">
+    
     <!-- Fuente de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
+    
     <!--Agregamos el archivo de Javascript-->
-    <script src="/JS/Index.js"></script>
+    <script src="/JS/ScrollearImagenHorizontal.js"></script>
+    <script src="/JS/BarraNavegacionVertical.js"></script>
 </head>
 
 <body>
@@ -27,7 +33,7 @@
     <div class="Cabecera">
 
         <!--Ponemos el logo a la izquierda-->
-        <img src="/Imagenes/Extras/Logo.png" id="Logo">
+        <a href="/HTML/Index.html" id="aLogo"><img src="/Imagenes/Extras/Logo.png" id="Logo" alt="Logo"></a>
         <!--Creamos la primera barra de navegacion que es horizontal-->
         <nav class="Nav">
             <ul>
@@ -40,7 +46,6 @@
         </nav>
 
         <!--Creamos la barra de busqueda e inicio de sesion-->
-
         <div id="BBIS">
             <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.. " name="BarraBusqueda">
             <img src="/Imagenes/Extras/CirculoBarraBusqueda.png" id="ImgBarraBusqueda" alt="Icono de búsqueda">
@@ -82,7 +87,6 @@
                         href="#">
                         <p>Remixes y Regalos</p>
                     </a></li>
-                <!-- Añade más elementos según sea necesario -->
             </ul>
         </div>
     </div>
@@ -97,6 +101,7 @@
 
     <!--theLatest-->
     <p class="etiquetaCentral">the<span>Latest</span></p>
+
     <!--Lista de discos dentro de Most Popular-->
     <div class="Lista-discos">
         <div class="scroller" data-direction="right">
@@ -105,8 +110,7 @@
                         href="#">
                         <p>Inkebrantable</p>
                     </a></li>
-                <li class="item"><a href="#"><img src="/Imagenes/Vinilos/Vinilo MMCD.png" alt="Disco 3"></a><a
-                        href="#">
+                <li class="item"><a href="#"><img src="/Imagenes/Vinilos/Vinilo MMCD.png" alt="Disco 3"></a><a href="#">
                         <p>Me Muevo Con Dios</p>
                     </a></li>
                 <li class="item"><a href="#"><img src="/Imagenes/Vinilos/Vinilo YIPIYOU.png" alt="Disco 3"></a><a
@@ -124,8 +128,6 @@
                         href="#">
                         <p>Brown Boy</p>
                     </a></li>
-
-                <!-- Añade más elementos según sea necesario -->
             </ul>
         </div>
     </div>
@@ -172,7 +174,8 @@
                             </svg>
                         </a></li>
                     <!--Tik Tok-->
-                    <li><a href="https://www.tiktok.com/@mundovinilo.es?is_from_webapp=1&sender_device=pc" target="_blank">
+                    <li><a href="https://www.tiktok.com/@mundovinilo.es?is_from_webapp=1&sender_device=pc"
+                            target="_blank">
                             <?xml version="1.0" ?><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
@@ -194,7 +197,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/mundo.vinilo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"> <!--Instagram-->
+                        <a href="https://www.instagram.com/mundo.vinilo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"> <!--Instagram-->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.7 56.7"
                                 enable-background="new 0 0 56.7 56.7" xml:space="preserve">
@@ -210,7 +214,7 @@
                             </svg>
 
                         </a>
-                    </li>         
+                    </li>
                     <li><a href="https://www.youtube.com/@MundoVinilo" target="_blank"> <!--Youtube-->
                             <?xml version="1.0" ?><svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
                                 <path
