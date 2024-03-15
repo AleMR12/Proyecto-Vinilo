@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // Llama a la función para agregar la animación
         addAnimationIzquierda();
         addAnimationDerecha();
-        
+
     }
 
-    // Función para agregar la animación
+    // Función para agregar la animación hacia la izquierda
     function addAnimationIzquierda() {
         // Itera sobre cada elemento .scroller y agrega el atributo data-animated
         scrollers.forEach((scroller) => {
@@ -22,13 +22,27 @@ document.addEventListener("DOMContentLoaded", function () {
             const scrollerContent = Array.from(scrollerInner.children);
 
             scrollerContent.forEach(item => {
-
                 const duplicatedItem = item.cloneNode(true);
                 duplicatedItem.setAttribute("aria-hidden", true);
                 scrollerInner.appendChild(duplicatedItem);
-            })
-
+            });
         });
     }
-    
+
+    // Función para agregar la animación hacia la derecha
+    function addAnimationDerecha() {
+        // Itera sobre cada elemento .scroller y agrega el atributo data-animated
+        scrollers.forEach((scroller) => {
+            scroller.setAttribute("data-animated", true);
+
+            const scrollerInner = scroller.querySelector(".lista-horizontal");
+            const scrollerContent = Array.from(scrollerInner.children);
+
+            scrollerContent.forEach(item => {
+                const duplicatedItem = item.cloneNode(true);
+                duplicatedItem.setAttribute("aria-hidden", true);
+                scrollerInner.prepend(duplicatedItem); // Cambia appendChild por prepend para agregar elementos al principio
+            });
+        });
+    }
 });
