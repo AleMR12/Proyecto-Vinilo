@@ -46,7 +46,7 @@ if (mysqli_stmt_execute($stmt)) {
     $_SESSION['username'] = $usuario;
 
     // Redirigir al usuario a la página de inicio
-    header("Location: ../HTML/Index.php");
+    header("Location: ../PHP/Index.php");
     exit(); // Asegurarse de que el script se detenga después de la redirección
 } else {
     echo "Error al insertar datos: " . mysqli_error($conexion);
