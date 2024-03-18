@@ -65,7 +65,7 @@ if (isset($_SESSION['usuario'])) {
             <div id="BBIS">
                 <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.. " name="BarraBusqueda">
                 <img src="../Imagenes/Extras/CirculoBarraBusqueda.png" id="ImgBarraBusqueda" alt="Icono de búsqueda">
-                <p id="BUsuario">Bienvenido, <?php echo $usuario; ?></p>
+                <p>Bienvenido, <?php echo $usuario; ?></p>
             </div>
         </div>
     </header>
