@@ -1,3 +1,16 @@
+<?php
+// Iniciar la sesión
+session_start();
+
+// Verificar si la variable de sesión está configurada
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    // Si no hay usuario registrado, puedes manejarlo de alguna manera
+    $usuario = "Usuario Desconocido";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,7 +49,7 @@
         <div class="Cabecera">
 
             <!--Ponemos el logo a la izquierda-->
-            <a href="../HTML/Index.html" id="aLogo"><img src="../Imagenes/Extras/Logo.png" id="Logo" alt="Logo"></a>
+            <a href="../PHP/Index.php" id="aLogo"><img src="../Imagenes/Extras/Logo.png" id="Logo" alt="Logo"></a>
             <!--Creamos la primera barra de navegacion que es horizontal-->
             <nav class="Nav">
                 <ul>
@@ -52,10 +65,9 @@
             <div id="BBIS">
                 <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.. " name="BarraBusqueda">
                 <img src="../Imagenes/Extras/CirculoBarraBusqueda.png" id="ImgBarraBusqueda" alt="Icono de búsqueda">
-                <?php
-                // Iniciar la sesión
-                session_start();
-                ?>
+                <p id="BUsuario">Bienvenido, <?php echo $usuario; ?></p>
             </div>
         </div>
     </header>
+
+

@@ -1,6 +1,6 @@
 <?php
-session_start();
-include("../PHP/Header.php");
+
+include("../PHP/HeaderPHP.php");
 
 
 // Limpia las variables de sesión después de guardarlas en variables locales
