@@ -53,7 +53,8 @@
                 <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.. " name="BarraBusqueda">
                 <img src="../Imagenes/Extras/CirculoBarraBusqueda.png" id="ImgBarraBusqueda" alt="Icono de búsqueda">
                 <?php
-                    
+                // Iniciar la sesión
+                session_start();
                 ?>
             </div>
         </div>
