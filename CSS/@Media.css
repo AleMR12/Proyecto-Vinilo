@@ -10,10 +10,10 @@
 
     }
 
-    #Logo {
+    .Logo{
 
-        height: 2rem;
-        animation: increaseHeight 0.5s forwards;
+        animation: bajarLogo 0.5s forwards;
+
     }
 
     #Login {
@@ -70,12 +70,6 @@
         animation: reduceHeight 0.5s forwards;
     }
 
-    #Logo {
-
-        height: 6rem;
-        animation: reduceHeight 0.5s forwards;
-    }
-
     #Menu {
 
         display: block;
@@ -90,6 +84,12 @@
         height: 30px;
         width: 30px;
         
+    }
+
+    .Logo{
+
+        animation: subirLogo 0.5s forwards;
+
     }
 
     #Login{

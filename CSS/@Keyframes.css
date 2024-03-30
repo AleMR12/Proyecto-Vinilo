@@ -57,6 +57,32 @@
     }
 }
 
+/* Definicion de la animacion de subir logo */
+@keyframes subirLogo{
+
+    0%{
+        transform: translateY(0rem);
+    }
+    100%{
+
+        transform: translateY(-2rem);
+    }
+
+}
+
+/* Definicion de la animacion de bajar logo */
+@keyframes bajarLogo{
+
+    0%{
+        transform: translateY(-2rem);
+    }
+    100%{
+
+        transform: translateY(0rem);
+    }
+
+}
+
 /*Agrandar imagen */
 @keyframes increaseImg {
     from {
