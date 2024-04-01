@@ -37,10 +37,11 @@
     
 }
 
-#aLogo{
+.aLogo{
 
     display: inline-block;
     height: fit-content;
+    
 
 }
 
@@ -275,6 +276,7 @@ footer {
     height: auto;
     min-height: 20vh;
     padding: 3rem 0;
+    margin: 2rem 0 0 0;
 }
 
 .footer-content {
