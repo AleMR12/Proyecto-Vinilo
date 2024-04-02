@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
+
+    <!-- Agregamos los archivos Javascript -->
+    <script src="../JS/BarraNavegacionVertical.js"></script>
 </head>
 <body>
 
@@ -42,9 +45,11 @@
 
             <!--Creamos la barra de busqueda e inicio de sesion-->
             <div id="BBIS">
-                <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.. " name="BarraBusqueda">
-                <img src="../Imagenes/Extras/CirculoBarraBusqueda.png" id="ImgBarraBusqueda" alt="Icono de búsqueda">
-                <a href="../HTML/Log In.html"><img src="../Imagenes/Extras/Log In.png" id="Login"></a>
+                <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.." name="BarraBusqueda">
+                <img id="ImgBarraBusqueda" src="../Imagenes/Extras/CirculoBarraBusqueda.png" alt="Icono de búsqueda">
+                <a href="../HTML/Log In.html" class="LogIn">
+                    <img src="/Imagenes/Extras/LogIn.png" alt="Login">
+                </a>
             </div>
         </div>
     </header>

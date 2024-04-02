@@ -48,9 +48,11 @@
 
             <!--Creamos la barra de busqueda e inicio de sesion-->
             <div id="BBIS">
-                <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.. " name="BarraBusqueda">
-                <img src="../Imagenes/Extras/CirculoBarraBusqueda.png" id="ImgBarraBusqueda" alt="Icono de búsqueda">
-                <a class="Login" href="../HTML/Log In.html"><img src="../Imagenes/Extras/Log In.png"></a>
+                <input id="BarraBusqueda" type="text" placeholder="Pulsa para buscar.." name="BarraBusqueda">
+                <img id="ImgBarraBusqueda" src="../Imagenes/Extras/CirculoBarraBusqueda.png" alt="Icono de búsqueda">
+                <a href="../HTML/Log In.html" class="LogIn">
+                    <img src="../Imagenes/Extras/LogIn.png" alt="Login">
+                </a>
             </div>
         </div>
     </header>
@@ -63,31 +65,31 @@
         <div class="Lista-discos">
             <div class="scroller">
                 <ul class="lista-horizontal">
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Sin Miedo A Vivir.png"
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloSinMiedoAVivir.png"
                                 alt="Disco 3"></a><a href="#">
                             <p>Sin Miedo A Vivir</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo El Madrileño.png"
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloElMadrileño.png"
                                 alt="Disco 3"></a><a href="#">
                             <p>El Madrileño</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Moonlight.png"
-                                alt="Disco 3"></a><a href="#">
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloMoonlight.png" alt="Disco 3"></a><a
+                            href="#">
                             <p>Moonlight</p>
                         </a></li>
                     <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloTKT.png" alt="Disco 3"></a><a
                             href="#">
                             <p>TKT</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Maracucho Bueno.png"
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloMaracuchoBueno.png"
                                 alt="Disco 3"></a><a href="#">
                             <p>Maracucho Bueno Muere Chiquito</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Heroe.png" alt="Disco 3"></a><a
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloHeroe.png" alt="Disco 3"></a><a
                             href="#">
                             <p>Héroe</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Remixes.png" alt="Disco 3"></a><a
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloRemixes.png" alt="Disco 3"></a><a
                             href="#">
                             <p>Remixes y Regalos</p>
                         </a></li>
@@ -95,13 +97,7 @@
             </div>
         </div>
 
-        <!--Creamos el menu de la barra de navegacion vertical-->
-        <ul>
-            <li id="Menu" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24"
-                        viewBox="0 -960 960 960" width="24">
-                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                    </svg></a></li>
-        </ul>
+
 
         <!--theLatest-->
         <p class="etiquetaCentral">the<span>Latest</span></p>
@@ -110,35 +106,45 @@
         <div class="Lista-discos">
             <div class="scroller" data-direction="right">
                 <ul class="lista-horizontal">
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Inkebrantable.png"
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloInkebrantable.png"
                                 alt="Disco 3"></a><a href="#">
                             <p>Inkebrantable</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo MMCD.png" alt="Disco 3"></a><a
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloMMCD.png" alt="Disco 3"></a><a
                             href="#">
                             <p>Me Muevo Con Dios</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo YIPIYOU.png" alt="Disco 3"></a><a
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloYIPIYOU.png" alt="Disco 3"></a><a
                             href="#">
                             <p>YIPIYOU</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo BBO.png" alt="Disco 3"></a><a
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloBBO.png" alt="Disco 3"></a><a
                             href="#">
                             <p>BBO</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Nombre Direccion.png"
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloNombreDireccion.png"
                                 alt="Disco 3"></a><a href="#">
                             <p>Nombre Dirección</p>
                         </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/Vinilo Brown Boy.png"
-                                alt="Disco 3"></a><a href="#">
+                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloBrownBoy.png" alt="Disco 3"></a><a
+                            href="#">
                             <p>Brown Boy</p>
                         </a></li>
                 </ul>
             </div>
         </div>
 
-        <!--Creamos la segunda barra de navegacion la cual es vertical-->
+
+        <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->
+        <ul>
+            <li id="Menu" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+                        viewBox="0 -960 960 960" width="24">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a></li>
+        </ul>
+
+
+        <!-- Aplicamos la funcion de clicado para cerrar la barra de navegación vertical -->
         <div class="Cabecera2">
             <nav>
                 <ul class="Sidebar">
@@ -147,6 +153,7 @@
                                 <path
                                     d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                             </svg></a></li>
+                    <li><a href="../HTML/Log In.html">INICIAR SESIÓN</a></li>
                     <li><a href="../HTML/Discos.html">DISCOS</a></li>
                     <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
                     <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>

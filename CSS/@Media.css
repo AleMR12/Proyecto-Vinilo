@@ -16,11 +16,6 @@
 
     }
 
-    .Login {
-
-        animation: desplazarlsy .5s forwards;
-                
-    }
 
     #Menu {
 
@@ -44,10 +39,10 @@
 
     }
 
-    .Login {
-        display: flex;
-        position: absolute;
-        right: 0px;
+    .LogIn {
+        
+        display: none;
+        
     }
 
     #BarraBusqueda {
@@ -75,7 +70,7 @@
         display: block;
         position: absolute;
         top: 1.8rem;
-        right: 80px;
+        right: 2rem;
         opacity: 1;
     
     } 
@@ -90,11 +85,6 @@
 
         animation: subirLogo 0.5s forwards;
 
-    }
-
-    .Login{
-
-        animation: desplazarlby .5s forwards;
     }
 
     .redes-sociales{
