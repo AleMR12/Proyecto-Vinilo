@@ -76,16 +76,16 @@
     top: 12px;
 }
 
-#Login {
-    height: 25px;
-    /* O puedes eliminar esta línea por completo */
+.Login {
+    width: 1rem;
     margin-right: 25px;
     transition: transform 0.2s ease-in-out;
+    border: 1px solid white;
 }
 
 
 
-#Login:hover {
+.Login:hover {
     cursor: pointer;
     transform: scale(1.2);
     /* Aplica un aumento de escala al elemento cuando se pasa el ratón por encima */

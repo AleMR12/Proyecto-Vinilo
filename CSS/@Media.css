@@ -16,7 +16,7 @@
 
     }
 
-    #Login {
+    .Login {
 
         animation: desplazarlsy .5s forwards;
                 
@@ -44,7 +44,7 @@
 
     }
 
-    #Login {
+    .Login {
         display: flex;
         position: absolute;
         right: 0px;
@@ -92,7 +92,7 @@
 
     }
 
-    #Login{
+    .Login{
 
         animation: desplazarlby .5s forwards;
     }
