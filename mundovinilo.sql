@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2024 at 11:53 AM
+-- Generation Time: Apr 03, 2024 at 09:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,12 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `discos` (
-  `Foto` blob NOT NULL
+  `ID` int(11) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Descripción` varchar(255) NOT NULL,
+  `Precio` int(3) NOT NULL,
+  `Existencias` int(3) NOT NULL,
+  `Foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `discos`
---
 -- --------------------------------------------------------
 
 --
@@ -55,6 +57,12 @@ CREATE TABLE `usuarios` (
 --
 
 --
+-- Indexes for table `discos`
+--
+ALTER TABLE `discos`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -65,13 +73,18 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `discos`
+--
+ALTER TABLE `discos`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-<

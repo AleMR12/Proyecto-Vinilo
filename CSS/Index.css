@@ -32,77 +32,38 @@
 }
 .Logo{
 
-    margin: 3rem .5rem .5rem 2rem;
     height: 4rem;
-    
 }
 
 .aLogo{
 
     display: inline-block;
     height: fit-content;
+    margin: 3rem .5rem .5rem 2rem;
     
-
 }
 
 /* Estilo para el enlace */
 .enlace-imagen {
     display: inline-block; /* Para que el enlace se ajuste al tamaño de la imagen */
+    height: fit-content;
+    margin: 1rem 2rem 0 0;
 }
 
 /* Estilo para la imagen */
 .enlace-imagen img {
-    max-width: 100%; /* La imagen no debe exceder el ancho del contenedor */
+    width: auto; /* La imagen no debe exceder el ancho del contenedor */
     height: 1.5rem; /* Para mantener la proporción de la imagen */
+    transition: transform 0.3s ease;
 }
 
+.enlace-imagen img:hover{
 
-
-
-#BBIS {
-    display: flex;
-    float: right;
-    padding: 0.625rem 0 0 0; /* 10px */
-    position: relative;
-}
-
-#BarraBusqueda {
-    width: 15.625rem; /* 250px */
-    height: 0.3125rem; /* 5px */
-    border-radius: 1.25rem; /* 20px */
-    transition: border-color 0.3s;
-    padding: 0.625rem; /* 10px */
-    display: flex;
-    padding-right: 3.125rem; /* 50px */
-    margin-right: 1.875rem; /* 30px */
-}
-
-#BarraBusqueda:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 0.125rem rgb(255, 255, 255); /* 2px */
-}
-
-#ImgBarraBusqueda {
-    height: 1.25rem; /* 20px */
-    position: absolute;
-    right: 5.3125rem; /* 85px */
-    top: 0.75rem; /* 12px */
-}
-
-#LoginLink {
-    position: relative;
-}
-
-#LogIn {
-    height: 1.25rem; /* 20px */
-    transition: transform 0.2s ease-in-out;
-}
-
-#LogIn:hover {
     cursor: pointer;
     transform: scale(1.2);
-}
 
+
+}
 
 /*Estilo para las imagenes sacadas de google*/
 svg path {

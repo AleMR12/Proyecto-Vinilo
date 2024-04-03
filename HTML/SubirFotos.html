@@ -3,50 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Imágenes</title>
-
-    <!-- Agregamos el archivo CSS -->
-    <link rel="stylesheet" type="text/css" href="../CSS/SubirFotos.css">
+    <title>Subir Imagen</title>
 </head>
 <body>
-    <form id="formulario" method="post" action="ProcesarImagen.php" enctype="multipart/form-data">
-        <div id="contenedor-imagenes">
-            <!-- Cada campo de carga de archivos tiene un nombre único -->
-            <input type="file" name="imagen[]" id="imagen" multiple accept="image/*">
-            <div id="vista-previa"></div>
-        </div>
-        <button type="submit">Enviar</button>
+    <h2>Subir Imagen</h2>
+    <form action="../PHP/ProcesarImagen.php" method="post" enctype="multipart/form-data">
+        <label for="imagen">Seleccionar imagen:</label>
+        <input type="file" name="imagen" id="imagen" accept="image/*">
+        <br><br>
+        <label for="nombre">Nombre del disco:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br><br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
+        <br><br>
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" id="precio">
+        <br><br>
+        <label for="existencias">Existencias:</label>
+        <input type="number" name="existencias" id="existencias">
+        <br><br>
+        <button type="submit">Subir</button>
     </form>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputImagen = document.getElementById('imagen');
-            const contenedorVistaPrevia = document.getElementById('vista-previa');
-
-            inputImagen.addEventListener('change', function() {
-                mostrarVistaPrevia();
-            });
-
-            function mostrarVistaPrevia() {
-                contenedorVistaPrevia.innerHTML = ''; // Limpiar la vista previa
-
-                const archivos = inputImagen.files;
-
-                for (let i = 0; i < archivos.length; i++) {
-                    const archivo = archivos[i];
-                    const lector = new FileReader();
-
-                    lector.onload = function(evento) {
-                        const imagen = document.createElement('img');
-                        imagen.src = evento.target.result;
-                        imagen.classList.add('imagen-previa');
-                        contenedorVistaPrevia.appendChild(imagen);
-                    }
-
-                    lector.readAsDataURL(archivo);
-                }
-            }
-        });
-    </script>
 </body>
 </html>
