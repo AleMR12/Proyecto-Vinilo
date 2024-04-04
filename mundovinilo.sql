@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2024 at 09:55 AM
+-- Generation Time: Apr 04, 2024 at 08:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,7 +31,7 @@ CREATE TABLE `discos` (
   `ID` int(11) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Descripción` varchar(255) NOT NULL,
-  `Precio` int(3) NOT NULL,
+  `Precio` float NOT NULL,
   `Existencias` int(3) NOT NULL,
   `Foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -46,11 +46,17 @@ CREATE TABLE `usuarios` (
   `ID` int(11) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido1` varchar(20) NOT NULL,
-  `Apellido2` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `DNI` varchar(9) NOT NULL,
+  `Apellido2` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Correo` varchar(50) NOT NULL,
   `Contraseña` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido1`, `Apellido2`, `Correo`, `Contraseña`) VALUES
+(1, 'root', 'none', '', 'root@mundovinilo.com', '$2y$10$f2vMJk9nj5NmA');
 
 --
 -- Indexes for dumped tables
@@ -82,7 +88,7 @@ ALTER TABLE `discos`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
