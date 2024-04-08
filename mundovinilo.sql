@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2024 at 08:57 AM
+-- Generation Time: Apr 05, 2024 at 11:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,8 +45,8 @@ CREATE TABLE `discos` (
 CREATE TABLE `usuarios` (
   `ID` int(11) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
-  `Apellido1` varchar(20) NOT NULL,
-  `Apellido2` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Apellido1` varchar(20) DEFAULT NULL,
+  `Apellido2` varchar(20) DEFAULT NULL,
   `Correo` varchar(50) NOT NULL,
   `Contraseña` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -56,7 +56,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido1`, `Apellido2`, `Correo`, `Contraseña`) VALUES
-(1, 'root', 'none', '', 'root@mundovinilo.com', '$2y$10$f2vMJk9nj5NmA');
+(1, 'root', '', '', 'root@mundovinilo.com', '$2y$10$5bw6bwXoYHPCe'),
+(2, 'Alejandro', ' ', ' ', 'alejandro@gmail.com', '$2y$10$S5kTw0obPgJt0');
 
 --
 -- Indexes for dumped tables
@@ -88,7 +89,7 @@ ALTER TABLE `discos`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
