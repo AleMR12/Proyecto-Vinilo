@@ -15,8 +15,8 @@ if ($password !== $confirm_password) {
     die("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
 }
 
-//Conexion a BDD
-require('conexionBDD.php');
+//Conexion a la BDD
+require('../../Mi-Proyecto/PHP/conexionBDD.php');
 
 // Preparar la consulta SQL para insertar un nuevo usuario
 $sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Correo, Contraseña) VALUES (?, ?, ?, ?, ?)";
