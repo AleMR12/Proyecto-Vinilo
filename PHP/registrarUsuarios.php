@@ -15,18 +15,8 @@ if ($password !== $confirm_password) {
     die("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
 }
 
-// Conectar a la base de datos
-$db_host = "localhost";
-$db_nombre = "mundovinilo";
-$db_usuario = "root";
-$db_contra = "";
-
-$conexion = mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
-
-// Verificar si hay errores de conexión
-if (!$conexion) {
-    die("Error de conexión: " . mysqli_connect_error());
-}
+//Conexion a BDD
+require('conexionBDD.php');
 
 // Preparar la consulta SQL para insertar un nuevo usuario
 $sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Correo, Contraseña) VALUES (?, ?, ?, ?, ?)";
@@ -59,4 +49,3 @@ if ($stmt = mysqli_prepare($conexion, $sql)) {
 
 // Cerrar la conexión
 mysqli_close($conexion);
-?>

@@ -53,10 +53,24 @@
 
     <main>
 
+        //Conexion a la BDD
+        require('../Mi-Proyecto/PHP/conexionBDD.php');
 
+        // Consulta para obtener los datos de los discos de vinilo
+        $sql = "SELECT * FROM discos_de_vinilo";
+        $result = $conn->query($sql);
 
-
-
+        // Verificar si se encontraron resultados
+        if ($result->num_rows > 0) {
+        // Iterar sobre cada fila de resultados
+        while($row = $result->fetch_assoc()) {
+        // Mostrar la información de cada disco de vinilo
+        echo "<div>";
+            echo "<img src='" . $row[' imagen'] . "' alt='" . $row['nombre'] . "'>" ; echo "<p>Precio: $" .
+                $row['precio'] . "</p>" ; echo "<p>Existencia: " . $row['existencia'] . "</p>" ; echo "<p>Descripción: "
+                . $row['descripcion'] . "</p>" ; echo "</div>" ; } } else { echo "No se encontraron discos de vinilo." ;
+                } // Cerrar la conexión $conn->close();
+            ?>
 
     </main>
 
