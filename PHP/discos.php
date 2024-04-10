@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS/@Media.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Reset.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Cabecera.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Discos.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/DiscosPHP.css">
 
     <!-- Fuente de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,32 +60,40 @@
         // Consulta para obtener los datos de los discos de vinilo
         $sql = "SELECT * FROM discos";
         $result = $conexion->query($sql);
+        ?>
 
-        // Verificar si se encontraron resultados
-        if ($result->num_rows > 0) {
-            // Iterar sobre cada fila de resultados
-            while ($row = $result->fetch_assoc()) {
-                // Obtener la ruta relativa eliminando el directorio raíz del servidor
-                $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
-
-                // Mostrar la información de cada disco de vinilo
-                echo "<div>";
-                echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
-
-                echo "<p>Precio: $" . $row['Precio'] . "</p>";
-                echo "<p>Existencia: " . $row['Existencias'] . "</p>";
-                echo "<p>Descripción: " . $row['Descripción'] . "</p>";
-                echo "</div>";
+        <!-- Le damos clase al div -->
+        <div class="contenedor-discos">
+            <?php
+            // Verificar si se encontraron resultados
+            if ($result->num_rows > 0) {
+                // Iterar sobre cada fila de resultados
+                while ($row = $result->fetch_assoc()) {
+                    // Obtener la ruta relativa eliminando el directorio raíz del servidor
+                    $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
+                    // Mostrar la información de cada disco de vinilo
+                    echo "<div class='disco-vinilo'>";
+                    echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
+                    echo "<div class='info-disco'>";
+                    echo "<h2>" . $row['Nombre'] . "</h2>";
+                    echo "<p class='descripcion'>" . $row['Descripción'] . "</p>";
+                    echo "<p class='precio'>Precio: $" . $row['Precio'] . "</p>";
+                    echo "<p class='existencias'>Existencias: " . $row['Existencias'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "No se encontraron discos de vinilo.";
             }
-        } else {
-            echo "No se encontraron discos de vinilo.";
-        }
+            ?>
+        </div>
 
-
-
-        // Cerrar la conexión 
+        <?php
+        // Cerrar la conexión
         $conexion->close();
         ?>
+
+
 
     </main>
 
