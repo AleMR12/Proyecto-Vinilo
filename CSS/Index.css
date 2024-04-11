@@ -30,62 +30,39 @@
 .Nav a:hover {
     transform: scale(1.2);
 }
-#Logo{
+.Logo{
 
-    padding-left: .7rem;
-
+    height: 4rem;
 }
 
-#aLogo{
+.aLogo{
 
     display: inline-block;
+    height: fit-content;
+    margin: 3rem .5rem .5rem 2rem;
     
 }
 
-#BBIS {
-    display: flex;
-    float: right;
-    padding: 10px 0 0 0;
+/* Estilo para el enlace */
+.enlace-imagen {
+    display: inline-block; /* Para que el enlace se ajuste al tamaño de la imagen */
+    height: fit-content;
+    margin: 1rem 2rem 0 0;
 }
 
-#BarraBusqueda {
-    width: 250px;
-    height: 5px;
-    border-radius: 20px;
-    transition: border-color 0.3s;
-    padding: 10px 10px 10px 10px;
-    display: flex;
-    padding-right: 50px;
-    margin-right: 30px;
+/* Estilo para la imagen */
+.enlace-imagen img {
+    width: auto; /* La imagen no debe exceder el ancho del contenedor */
+    height: 1.5rem; /* Para mantener la proporción de la imagen */
+    transition: transform 0.3s ease;
 }
 
-#BarraBusqueda:focus {
-    border-color: #ffffff;
-    /* Cambiar el color del borde al enfocar */
-    box-shadow: 0 0 2px rgb(255, 255, 255);
-    /* Sombra al enfocar */
-}
+.enlace-imagen img:hover{
 
-#ImgBarraBusqueda {
-    height: 20px;
-    position: absolute;
-    right: 85px;
-    top: 12px;
-}
-
-#Login {
-    height: 25px;
-    /* O puedes eliminar esta línea por completo */
-    margin-right: 25px;
-    transition: transform 0.2s ease-in-out;
-}
-
-
-
-#Login:hover {
     cursor: pointer;
     transform: scale(1.2);
-    /* Aplica un aumento de escala al elemento cuando se pasa el ratón por encima */
+
+
 }
 
 /*Estilo para las imagenes sacadas de google*/
@@ -273,6 +250,7 @@ footer {
     height: auto;
     min-height: 20vh;
     padding: 3rem 0;
+    margin: 2rem 0 0 0;
 }
 
 .footer-content {
@@ -425,3 +403,6 @@ footer {
     height: auto;
 
 }
+
+/* CSS PARA INDEX.PHP */
+

@@ -88,19 +88,18 @@
     top: 12px;
 }
 
-#Login {
-    height: 25px;
-    /* O puedes eliminar esta línea por completo */
-    margin-right: 25px;
-    transition: transform 0.2s ease-in-out;
+/* Estilo para el enlace */
+.enlace-imagen {
+    display: inline-block; /* Para que el enlace se ajuste al tamaño de la imagen */
+    height: fit-content;
+    width: auto;
+    margin-right: 2rem;
 }
 
-
-
-#Login:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-    /* Aplica un aumento de escala al elemento cuando se pasa el ratón por encima */
+/* Estilo para la imagen */
+.enlace-imagen img {
+    max-width: 100%; /* La imagen no debe exceder el ancho del contenedor */
+    height: 1.5rem; /* Para mantener la proporción de la imagen */
 }
 
 /*Estilo para las imagenes sacadas de google*/
@@ -169,4 +168,11 @@ svg path {
 #CerrarMenu {
 
     cursor: pointer;
+}
+
+.imagen-disco{
+
+
+    width: 8rem;
+
 }

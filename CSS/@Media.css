@@ -10,17 +10,12 @@
 
     }
 
-    #Logo {
+    .Logo{
 
-        height: 2rem;
-        animation: increaseHeight 0.5s forwards;
+        animation: bajarLogo 0.5s forwards;
+
     }
 
-    #Login {
-
-        animation: desplazarlsy .5s forwards;
-                
-    }
 
     #Menu {
 
@@ -44,10 +39,10 @@
 
     }
 
-    #Login {
-        display: flex;
-        position: absolute;
-        right: 0px;
+    .enlace-imagen {
+        
+        display: none;
+        
     }
 
     #BarraBusqueda {
@@ -70,18 +65,12 @@
         animation: reduceHeight 0.5s forwards;
     }
 
-    #Logo {
-
-        height: 6rem;
-        animation: reduceHeight 0.5s forwards;
-    }
-
     #Menu {
 
         display: block;
         position: absolute;
         top: 1.8rem;
-        right: 80px;
+        right: 2rem;
         opacity: 1;
     
     } 
@@ -92,9 +81,10 @@
         
     }
 
-    #Login{
+    .Logo{
 
-        animation: desplazarlby .5s forwards;
+        animation: subirLogo 0.5s forwards;
+
     }
 
     .redes-sociales{
