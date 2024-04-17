@@ -1,4 +1,3 @@
-
 .contenedor-discos {
     display: flex;
     flex-wrap: wrap;
@@ -7,21 +6,27 @@
 
 .disco-vinilo {
     display: flex;
-    width: 100%; /* 50% del ancho del contenedor menos el espacio entre elementos */
+    align-items: center; /* Alinear elementos verticalmente */
     margin: 10px;
     padding: .2rem;
 }
 
 .imagen-disco {
-    width:auto; /* Tamaño deseado para la imagen */
-    height: 10rem;
-    margin-right: 10px;
-    border-right: 1px solid rgba(0, 0, 0, 0.477);
+    width: 15rem; /* Ancho fijo para las imágenes */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 1rem;
 }
+
+.linea-vertical {
+    height: 12rem; /* Altura mayor que la altura máxima de las imágenes */
+    width: 2px; /* Ancho de la línea vertical */
+    background-color: rgba(0, 0, 0, 0.69); /* Cambiamos el color de fondo a blanco */
+    margin-right: 1rem; /* Espacio entre la línea y el texto */
+}
+
 
 .info-disco {
     flex-grow: 1;
-    
 }
 
 .info-disco h2 {
@@ -35,8 +40,10 @@
 
 .descripcion {
     font-style: italic;
+    font-size: .9rem;
 }
 
 .precio {
     font-weight: bold;
 }
+

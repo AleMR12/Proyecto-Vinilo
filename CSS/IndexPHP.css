@@ -1,0 +1,124 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+a {
+
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    height: fit-content;
+
+}
+
+/* Estilos para el mensaje de bienvenida */
+.bienvenida {
+    display: inline-block;
+    /* Para mantener en una sola línea */
+    margin-right: 4.5rem;
+    /* Añadimos margen derecho */
+    /* Espacio entre el mensaje y los iconos */
+    height: max-content;
+    width: 18rem;
+    text-align: end;
+    margin-top: .5rem;
+}
+
+
+/* Estilos para los iconos */
+.iconos {
+    display: inline-block;
+    /* Para mantener en una sola línea */
+    vertical-align: middle;
+    /* Alinear verticalmente */
+}
+
+/* Estilos adicionales para los iconos si es necesario */
+.carrito,
+.enlace-imagen-cerrar {
+
+    margin: 0;
+    margin-right: 1rem;
+    margin-top: .5rem;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.carrito {
+
+    cursor: pointer;
+    height: fit-content;
+
+}
+
+.carrito:hover,
+.enlace-imagen-cerrar:hover {
+
+    transform: scale(1.2);
+}
+
+/* Estilo para el menú desplegable del carrito */
+.menu-carrito-oculto {
+    display: none;
+    position: absolute;
+    top: 30px; /* Posición debajo del icono del carrito */
+    right: 0; /* Ajusta la posición según sea necesario */
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+}
+
+#elementos-carrito {
+    list-style-type: none;
+    padding: 0;
+}
+
+#elementos-carrito li {
+    margin-bottom: 5px;
+}
+/* Estilos para el contenedor del icono del carrito y del contador */
+.carrito-container {
+    position: absolute;
+    top: 0;
+    right: 20px; /* Ajusta la distancia desde la derecha según sea necesario */
+    display: flex;
+    align-items: center;
+    margin-right: 2.5rem;
+}
+
+
+.cantidad-carrito {
+    position: absolute;
+    top: 50%;
+    right: -5px; /* Ajusta la distancia a la derecha según sea necesario */
+    transform: translateY(-50%);
+    background-color: #1f1f1f6e; /* Color de fondo del contador */
+    color: #ffffff; /* Color del texto del contador */
+    border-radius: 50%; /* Hace que el contador tenga forma circular */
+    padding: 5px; /* Espacio interior del contador */
+    font-size: 12px; /* Tamaño de fuente del contador */
+}
+
+
+
+
+@media (max-width:1250px) {
+
+    .bienvenida {
+
+        display: none;
+    }
+
+    .enlace-imagen-cerrar {
+
+        display: none;
+    }
+
+    .carrito {
+
+        display: none;
+    }
+
+}

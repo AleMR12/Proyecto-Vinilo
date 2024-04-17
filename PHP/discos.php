@@ -27,32 +27,16 @@
 </head>
 
 <body>
+
+    <!-- Header de la página -->
     <header>
-        <!--Creamos nuestra cabecera-->
-        <div class="Cabecera">
-
-            <!--Ponemos el logo a la izquierda-->
-            <a href="../HTML/Index.html" class="aLogo"><img src="../Imagenes/Extras/Logo.png" class="Logo" alt="Logo"></a>
-            <!--Creamos la primera barra de navegacion que es horizontal-->
-            <nav class="Nav">
-                <ul>
-                    <li><a href="../HTML/Discos.html">DISCOS</a></li>
-                    <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
-                    <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
-                    <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
-                    <li><a href="../HTML/Contacto.html">CONTACTO</a></li>
-                </ul>
-            </nav>
-
-            <!-- Creamos el icono de iniciar sesion -->
-            <a href="../HTML/Log In.html" class="enlace-imagen">
-                <img src="../Imagenes/Extras/LogIn.png" alt="Iniciar Sesión">
-            </a>
-        </div>
+        <?php
+        require('Header.php');
+        ?>
     </header>
 
+    <!-- Cuerpo de la página -->
     <main>
-
         <?php
         //Conexion a la BDD
         require('../../Mi-Proyecto/PHP/conexionBDD.php');
@@ -74,11 +58,14 @@
                     // Mostrar la información de cada disco de vinilo
                     echo "<div class='disco-vinilo'>";
                     echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
+                    echo "<div class='linea-vertical'></div>";
                     echo "<div class='info-disco'>";
                     echo "<h2>" . $row['Nombre'] . "</h2>";
-                    echo "<p class='descripcion'>" . $row['Descripción'] . "</p>";
+                    echo "<p class='descripcion'>" . $row['Descripción'] . "</p> <br>";
                     echo "<p class='precio'>Precio: $" . $row['Precio'] . "</p>";
                     echo "<p class='existencias'>Existencias: " . $row['Existencias'] . "</p>";
+                    // Botón para agregar al carrito
+                    echo "<button class='btn-agregar-carrito' onclick='agregarAlCarrito(" . $row['ID'] . ")'>Agregar al carrito</button>";
                     echo "</div>";
                     echo "</div>";
                 }
@@ -93,9 +80,39 @@
         $conexion->close();
         ?>
 
+        <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->
+        <ul>
+            <li id="Menu" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a></li>
+        </ul>
 
+        <!-- Aplicamos la funcion de clicado para cerrar la barra de navegación vertical -->
+        <div class="Cabecera2">
+            <nav>
+                <ul class="Sidebar">
+                    <li id="CerrarMenu" onclick="closeSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg></a></li>
+                    <li><a href="../PHP/cerrarSesion.php">CERRAR SESIÓN</a></li>
+                    <li><a href="../PHP/Index.php">INICIO</a></li>
+                    <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
+                    <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
+                    <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
+                    <li><a href="../HTML/Contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
 
     </main>
+
+
+    <!-- Footer de la página -->
+    <footer>
+        <?php
+        require('footer.php');
+        ?>
+    </footer>
 
 </body>
 

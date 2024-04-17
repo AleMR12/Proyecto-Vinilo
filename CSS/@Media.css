@@ -45,17 +45,6 @@
         
     }
 
-    #BarraBusqueda {
-
-        display: none;
-
-    }
-
-    #ImgBarraBusqueda {
-
-        display: none;
-
-    }
 }
 
 /* Configuramos lo que pasa cuando la pantalla es menor a 1200px */
