@@ -9,22 +9,10 @@
     <!-- Ponemos el icono la ventana -->
     <link rel="icon" type="image/x-icon" href="../Imagenes/Extras/IsotipoMV.png">
 
-    <!--Agregamos los CSS-->
-    <link rel="stylesheet" type="text/css" href="../CSS/Index.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/IndexPHP.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/@Keyframes.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/@Media.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Reset.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Cabecera.css">
-
-    <!-- Fuente de Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
-
     <!--Agregamos el archivo de Javascript-->
     <script src="../JS/ScrollearImagenHorizontal.js"></script>
     <script src="../JS/BarraNavegacionVertical.js"></script>
+    <script src="../JS/capturarTexto.js"></script>
 
 </head>
 
@@ -44,34 +32,70 @@
         <!--mostPopular-->
         <p class="etiquetaCentral">most<span>Popular</span></p>
 
-        <!--Lista de discos dentro de Most Popular-->
+        <!-- Lista de discos dentro de Most Popular -->
         <div class="Lista-discos">
-            <div class="scroller" data-direction="left">
+            <div class="scroller">
                 <ul class="lista-horizontal">
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloSinMiedoAVivir.png" alt="Disco 3"></a><a href="#">
-                            <p>Sin Miedo A Vivir</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloElMadrileño.png" alt="Disco 3"></a><a href="#">
-                            <p>El Madrileño</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloMoonlight.png" alt="Disco 3"></a><a href="#">
-                            <p>Moonlight</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloTKT.png" alt="Disco 3"></a><a href="#">
-                            <p>TKT</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloMaracuchoBueno.png" alt="Disco 3"></a><a href="#">
-                            <p>Maracucho Bueno Muere Chiquito</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloHeroe.png" alt="Disco 3"></a><a href="#">
-                            <p>Héroe</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloRemixes.png" alt="Disco 3"></a><a href="#">
-                            <p>Remixes y Regalos</p>
-                        </a></li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloSinMiedoAVivir.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p1">Sin Miedo A Vivir</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloElMadrileño.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p2">El Madrileño</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloMoonlight.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p3">Moonlight</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloTKT.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p4">TKT</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloMaracuchoBueno.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p5">Maracucho Bueno Muere Chiquito</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloHeroe.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p6">Héroe</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="../PHP/discos.php">
+                            <img src="../Imagenes/Vinilos/ViniloRemixes.png" alt="Disco 3">
+                        </a>
+                        <a href="../PHP/discos.php">
+                            <p id="p7">Remixes y Regalos</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
+
 
         <!--theLatest-->
         <p class="etiquetaCentral">the<span>Latest</span></p>
@@ -80,27 +104,28 @@
         <div class="Lista-discos">
             <div class="scroller" data-direction="right">
                 <ul class="lista-horizontal">
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloInkebrantable.png" alt="Disco 3"></a><a href="#">
-                            <p>Inkebrantable</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloMMCD.png" alt="Disco 3"></a><a href="#">
-                            <p>Me Muevo Con Dios</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloYIPIYOU.png" alt="Disco 3"></a><a href="#">
-                            <p>YIPIYOU</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloBBO.png" alt="Disco 3"></a><a href="#">
-                            <p>BBO</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloNombreDireccion.png" alt="Disco 3"></a><a href="#">
-                            <p>Nombre Dirección</p>
-                        </a></li>
-                    <li class="item"><a href="#"><img src="../Imagenes/Vinilos/ViniloBrownBoy.png" alt="Disco 3"></a><a href="#">
-                            <p>Brown Boy</p>
-                        </a></li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloInkebrantable.png" alt="Disco 3"></a>
+                        <p>Inkebrantable</p>
+                    </li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloMMCD.png" alt="Disco 3"></a>
+                        <p>Me Muevo Con Dios</p>
+                    </li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloYIPIYOU.png" alt="Disco 3"></a>
+                        <p>YIPIYOU</p>
+                    </li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloBBO.png" alt="Disco 3"></a>
+                        <p>BBO</p>
+                    </li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloNombreDireccion.png" alt="Disco 3"></a>
+                        <p>Nombre Dirección</p>
+                    </li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloBrownBoy.png" alt="Disco 3"></a>
+                        <p>Brown Boy</p>
+                    </li>
                 </ul>
             </div>
         </div>
+
 
         <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->
         <ul>
@@ -117,8 +142,8 @@
                                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                             </svg></a></li>
                     <li><a href="../PHP/cerrarSesion.php">CERRAR SESIÓN</a></li>
-                    <li><a href="../../Mi-Proyecto/PHP/discos.php">DISCOS</a></li>
-                    <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
+                    <li><a href="../PHP/discos.php">DISCOS</a></li>
+                    <li><a href="../PHP/artistas.php">ARTISTAS</a></li>
                     <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
                     <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
                     <li><a href="../HTML/Contacto.html">CONTACTO</a></li>

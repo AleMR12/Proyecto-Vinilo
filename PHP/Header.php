@@ -1,11 +1,27 @@
 <?php
 session_start();
+
+// Obtener la cantidad total de productos en el carrito
+$cantidad_total_carrito = 0;
+if (isset($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $product) {
+        $cantidad_total_carrito += $product['quantity'];
+    }
+}
 ?>
 
-<!-- Añadimos CSS para PHP -->
-<link rel="stylesheet" type="text/css" href="../CSS/IndexPHP.css">
-<link rel="stylesheet" type="text/css" href="../CSS/@Media.css">
+<!--Agregamos los CSS-->
+<link rel="stylesheet" type="text/css" href="../CSS/Index.css">
 <link rel="stylesheet" type="text/css" href="../CSS/@Keyframes.css">
+<link rel="stylesheet" type="text/css" href="../CSS/@Media.css">
+<link rel="stylesheet" type="text/css" href="../CSS/Reset.css">
+<link rel="stylesheet" type="text/css" href="../CSS/Cabecera.css">
+<link rel="stylesheet" type="text/css" href="../CSS/IndexPHP.css">
+
+<!-- Fuente de Google -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
 
 <!-- Iconos de Google -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" /> <!-- Carrito -->
@@ -14,7 +30,6 @@ session_start();
 <!-- Añadimos JS -->
 <script src="../../Mi-Proyecto/JS/carrito.js"></script>
 
-<!-- header.php -->
 <!-- header.php -->
 <div class="Cabecera">
     <!-- Logo -->
@@ -25,7 +40,7 @@ session_start();
     <nav class="Nav">
         <ul>
             <li><a href="../PHP/discos.php">DISCOS</a></li>
-            <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
+            <li><a href="../PHP/artistas.php">ARTISTAS</a></li>
             <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
             <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
             <li><a href="../HTML/Contacto.html">CONTACTO</a></li>
@@ -36,21 +51,14 @@ session_start();
     if (isset($_SESSION['usuario'])) {
         echo '<p class="bienvenida">Bienvenido,&nbsp; ' . $_SESSION['usuario'] . '</p>';
         echo '<div class="carrito-container">'; // Contenedor adicional
+        echo '<a href="../PHP/verCarrito.php">'; // Enlace al carrito
         echo '<div class="carrito" id="carrito-icono">';
         echo '<span class="material-symbols-outlined">shopping_cart</span>';
-        echo '<div id="menu-carrito" class="menu-carrito-oculto">';
-        if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
-            echo '<ul id="elementos-carrito">';
-            foreach ($_SESSION['carrito'] as $elemento) {
-                echo '<li>' . $elemento . '</li>';
-            }
-            echo '</ul>';
-        }
+        // Mostrar el contador del carrito
+        echo $cantidad_total_carrito;
         echo '</div>';
+        echo '</a>'; // Cierre del enlace al carrito
         echo '</div>';
-        // Aquí agregamos el número de elementos en el carrito
-        echo '<span id="cantidad-carrito" class="cantidad-carrito">' . (isset($_SESSION['cantidad_total_carrito']) ? $_SESSION['cantidad_total_carrito'] : 0) . '</span>';
-        echo '</div>'; // Cerrar el contenedor adicional
         echo '<a href="../PHP/cerrarSesion.php" class="enlace-imagen-cerrar"><span class="material-symbols-outlined">logout</span></a>';
     } else {
         echo '<a href="../HTML/LogIn.html" class="enlace-imagen">';
@@ -58,4 +66,6 @@ session_start();
         echo '</a>';
     }
     ?>
+
+
 </div>

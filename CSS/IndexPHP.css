@@ -1,15 +1,12 @@
 * {
-
     margin: 0;
     padding: 0;
 }
 
 a {
-
     text-decoration: none;
     color: rgb(253, 253, 253);
     height: fit-content;
-
 }
 
 /* Estilos para el mensaje de bienvenida */
@@ -25,7 +22,6 @@ a {
     margin-top: .5rem;
 }
 
-
 /* Estilos para los iconos */
 .iconos {
     display: inline-block;
@@ -35,39 +31,26 @@ a {
 }
 
 /* Estilos adicionales para los iconos si es necesario */
-.carrito,
 .enlace-imagen-cerrar {
-
     margin: 0;
     margin-right: 1rem;
     margin-top: .5rem;
     transition: transform 0.2s ease-in-out;
-
 }
 
 .carrito {
-
     cursor: pointer;
     height: fit-content;
-
+    /* Ajusta el margen derecho según sea necesario */
+    margin-top: .5rem;
+    transition: transform 0.2s ease-in-out;
+    margin-right: -1rem;
+    display: flex;
 }
 
 .carrito:hover,
 .enlace-imagen-cerrar:hover {
-
     transform: scale(1.2);
-}
-
-/* Estilo para el menú desplegable del carrito */
-.menu-carrito-oculto {
-    display: none;
-    position: absolute;
-    top: 30px; /* Posición debajo del icono del carrito */
-    right: 0; /* Ajusta la posición según sea necesario */
-    background-color: white;
-    border: 1px solid black;
-    padding: 10px;
-    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
 }
 
 #elementos-carrito {
@@ -78,47 +61,309 @@ a {
 #elementos-carrito li {
     margin-bottom: 5px;
 }
+
 /* Estilos para el contenedor del icono del carrito y del contador */
 .carrito-container {
     position: absolute;
     top: 0;
-    right: 20px; /* Ajusta la distancia desde la derecha según sea necesario */
+    right: 30px;
+    /* Ajusta la distancia desde la derecha según sea necesario */
     display: flex;
     align-items: center;
     margin-right: 2.5rem;
+    /* Puedes ajustar este valor según sea necesario */
 }
 
-
-.cantidad-carrito {
-    position: absolute;
-    top: 50%;
-    right: -5px; /* Ajusta la distancia a la derecha según sea necesario */
-    transform: translateY(-50%);
-    background-color: #1f1f1f6e; /* Color de fondo del contador */
-    color: #ffffff; /* Color del texto del contador */
-    border-radius: 50%; /* Hace que el contador tenga forma circular */
-    padding: 5px; /* Espacio interior del contador */
-    font-size: 12px; /* Tamaño de fuente del contador */
+.contenedor-discos,
+.contenedor-artistas {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 3rem auto;
 }
 
+.disco-vinilo {
+    display: flex;
+    align-items: center;
+    /* Alinear elementos verticalmente */
+    margin: 10px;
+    padding: .2rem;
+}
 
+.imagen-disco,
+.imagen-artista {
+    width: 15rem;
+    /* Ancho fijo para las imágenes */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    margin-right: 1rem;
+    transition: transform 0.3s ease; /* Transición suave de 0.3 segundos para el efecto de zoom */
 
+}
 
+.imagen-disco:hover{
+
+    transform: scale(1.05);
+
+}
+
+.linea-vertical {
+    height: 14rem;
+    /* Altura mayor que la altura máxima de las imágenes */
+    width: 2px;
+    /* Ancho de la línea vertical */
+    background-color: rgba(0, 0, 0, 0.782);
+    /* Cambiamos el color de fondo a blanco */
+    margin-right: 1rem;
+    /* Espacio entre la línea y el texto */
+    margin-bottom: 1rem;
+}
+
+.info-disco,
+.info-artista {
+    flex-grow: 1;
+}
+
+.info-disco h2,
+.info-artista h2 {
+    margin-top: 0;
+}
+
+.info-disco p,
+.info-artista p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.descripcion {
+    font-style:italic;
+    font-size: .9rem;
+    width: 100%;
+}
+
+.precio,
+.existencias {
+    width: fit-content;
+}
+
+.contenedor-busqueda {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#busqueda {
+    width: 20%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-color: #1e1e1e30;
+    /* Borde inicialmente transparente */
+    transition: border-color 0.3s ease;
+    /* Transición para el cambio de color del borde */
+    border-radius: .2rem;
+}
+
+#busqueda:hover {
+    border-color: #0000007f;
+    /* Color del borde al pasar el ratón por encima */
+}
+
+.saber-mas {
+    background-color: #b83030;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 0.3rem .5rem;
+    /* Espaciado dentro del botón */
+    border: none;
+    /* Borde sin estilo */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cursor al pasar sobre el botón */
+    text-align: center;
+    /* Alineación del texto */
+    text-decoration: none;
+    /* Sin subrayado */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    display: flex;
+    float: right;
+    transition: background-color 0.3s ease;
+    margin-left: 1rem;
+}
+
+.saber-mas:hover {
+    background-color: #9e0505;
+}
+
+.carrito-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    /* Asegura que no haya espacio alrededor del botón */
+    display: flex;
+    float: inline-end;
+    transition: transform 0.2s ease-in-out;
+}
+
+.carrito-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Lo que pasa cuando la pantalla es menor a 1250px */
 @media (max-width:1250px) {
-
-    .bienvenida {
-
-        display: none;
-    }
-
-    .enlace-imagen-cerrar {
-
-        display: none;
-    }
-
+    .bienvenida,
+    .enlace-imagen-cerrar,
     .carrito {
-
         display: none;
     }
+}
+/* Estilos para el archivo Artistas.php */
 
+.artista {
+    margin-top: 1.5rem;
+    padding: .2rem;
+    flex-basis: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilos para los elementos dentro de la clase 'artista' con índice par */
+.artista:nth-child(even) .imagen-artista {
+    width: 15rem;
+    height: auto;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+    float: left; /* Alinea la imagen a la izquierda para elementos pares */
+}
+
+.artista:nth-child(even) .info-artista {
+    flex-grow: 1;
+    margin-left: 1rem; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para los elementos dentro de la clase 'artista' con índice impar */
+.artista:nth-child(odd) .imagen-artista {
+    width: 15rem;
+    height: auto;
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+    float: right; /* Alinea la imagen a la derecha para elementos impares */
+}
+
+.artista:nth-child(odd) .info-artista {
+    flex-grow: 1;
+    margin-right: 1rem; /* Espacio entre la imagen y el texto */
+    
+}
+
+.info-artista h2 {
+    margin-top: 0;
+    border: 1px solid;
+}
+
+.info-artista p {
+    margin: 0;
+    margin-bottom: 5px;
+    border: 1px solid;
+}
+
+.imagen-artista {
+    transition: transform 0.3s ease;
+    border: 1px solid red;
+}
+
+.imagen-artista:hover {
+    transform: scale(1.1);
+}
+
+.descripcion-artista {
+    border: 1px solid;
+    width: fit-content;
+}
+
+.ultimo-artista {
+    border: none;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+}
+
+
+
+/* ESTILO PARA LA PAGINA DEL CARRITO */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f0f0f0;
+    text-align: left;
+}
+
+.quantity-input {
+    width: 50px;
+}
+
+.update-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-link {
+    color: #f44336;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.empty-cart-message {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+.clear-cart-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+}
+
+.clear-cart-button:hover {
+    background-color: #d32f2f;
 }

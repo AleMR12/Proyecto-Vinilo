@@ -372,7 +372,7 @@ footer {
 }
 
 .menu-footer a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 1.4rem;
     display: inline-block; /* Cambia a inline-block */
@@ -393,7 +393,6 @@ footer {
     
 }
 
-
 .copyright {
 
     display: flex;
@@ -403,6 +402,3 @@ footer {
     height: auto;
 
 }
-
-/* CSS PARA INDEX.PHP */
-

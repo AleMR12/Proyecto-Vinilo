@@ -9,21 +9,13 @@
     <!-- Ponemos el icono la ventana -->
     <link rel="icon" type="image/x-icon" href="../Imagenes/Extras/IsotipoMV.png">
 
-    <!--Agregamos los CSS-->
-    <link rel="stylesheet" type="text/css" href="../CSS/Index.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/@Keyframes.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/@Media.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Reset.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Cabecera.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/DiscosPHP.css">
-
-    <!-- Fuente de Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
+    <!-- Ponemos el icono para añadir al carrito -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Agregamos los archivos Javascript -->
     <script src="../JS/BarraNavegacionVertical.js"></script>
+    <script src="../JS/carrito.js"></script>
+    <script src="../JS/barraBusqueda.js"></script>
 </head>
 
 <body>
@@ -48,6 +40,12 @@
 
         <!-- Le damos clase al div -->
         <div class="contenedor-discos">
+
+            <!-- Contenedor Barra de busqueda -->
+            <div class="contenedor-busqueda">
+                <!-- Barra de búsqueda -->
+                <input type="text" id="busqueda" placeholder="Buscar...">
+            </div>
             <?php
             // Verificar si se encontraron resultados
             if ($result->num_rows > 0) {
@@ -60,14 +58,32 @@
                     echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
                     echo "<div class='linea-vertical'></div>";
                     echo "<div class='info-disco'>";
-                    echo "<h2>" . $row['Nombre'] . "</h2>";
+                    echo "<h2 class='nombre-disco'>" . $row['Nombre'] . "</h2>";
                     echo "<p class='descripcion'>" . $row['Descripción'] . "</p> <br>";
-                    echo "<p class='precio'>Precio: $" . $row['Precio'] . "</p>";
-                    echo "<p class='existencias'>Existencias: " . $row['Existencias'] . "</p>";
-                    // Botón para agregar al carrito
-                    echo "<button class='btn-agregar-carrito' onclick='agregarAlCarrito(" . $row['ID'] . ")'>Agregar al carrito</button>";
+                    echo "<div class='precio-existencias'>";
+                    echo "<p class='nombre-artista'><b>Artista: </b>" . obtenerNombreArtista($row['ID_Artista'], $conexion) . "</p>";
+                    echo "<p class='precio'><b>Precio:</b> $" . $row['Precio'] . "</p>";
+                    echo "<p class='existencias'><b>Existencias:</b> " . $row['Existencias'] . "</p>";
                     echo "</div>";
-                    echo "</div>";
+
+
+                    // Formulario para agregar al carrito y botón "Saber más"
+                    echo "<div class='botones'>";
+                    echo "<a href='../PHP/Artistas.php'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
+                    // Verificar si hay una sesión iniciada antes de mostrar el botón "Añadir al carrito"
+                    if (isset($_SESSION['usuario'])) {
+                        echo "<form method='post' action='agregar_al_carrito.php' class='agregar-carrito-form'>";
+                        echo "<input type='hidden' name='product_id' value='" . $row['ID'] . "'>"; // Aquí se incluye el ID del producto
+                        echo "<input type='hidden' name='product_name' value='" . $row['Nombre'] . "'>";
+                        echo "<input type='hidden' name='product_price' value='" . $row['Precio'] . "'>";
+                        echo "<button type='submit' name='add_to_cart' class='carrito-btn'>";
+                        echo "<span class='material-symbols-outlined'>add_shopping_cart</span>";
+                        echo "</button>";
+                        echo "</form>";
+                    }
+                    echo "</div>"; // Fin de div 'botones'
+                    echo "</div>"; // Fin de div 'info-disco'
+                    echo "</div>"; // Fin de div 'disco-vinilo'
                 }
             } else {
                 echo "No se encontraron discos de vinilo.";
@@ -105,7 +121,6 @@
         </div>
 
     </main>
-
 
     <!-- Footer de la página -->
     <footer>

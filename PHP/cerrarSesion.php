@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../PHP/Index.php");
+header("Location: ../HTML/Index.html");
 exit();
 ?>
