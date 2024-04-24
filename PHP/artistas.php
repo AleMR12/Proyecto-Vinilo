@@ -39,7 +39,6 @@
         $result = $conexion->query($sql);
         ?>
 
-        <!-- Le damos clase al div -->
         <div class="contenedor-artistas">
             <?php
             // Verificar si se encontraron resultados
@@ -56,16 +55,16 @@
                     $es_ultimo = ($current_index == $total_rows) ? 'ultimo-artista' : '';
             ?>
                     <!-- Contenedor del artista -->
-                    <div class="artista">
-                        <div class="imagen-artista">
-                            <img src="<?php echo $ruta_relativa; ?>" alt="<?php echo $row['Nombre_Artistico']; ?>" class="imagen-artista">
-                        </div>
+                    <div class="artista <?php echo $es_ultimo; ?>">
+                        <img src="<?php echo $ruta_relativa; ?>" alt="<?php echo $row['Nombre_Artistico']; ?>" class="imagen-artista">
                         <div class="info-artista">
-                            <h2 class="nombre-artista"><?php echo $row['Nombre_Artistico']; ?></h2>
+                            <!-- Modificamos el enlace del nombre del artista para incluir el nombre como parámetro en la URL -->
+                            <h2 class="nombre-artista"><a href="../PHP/discos.php?artista=<?php echo urlencode($row['Nombre_Artistico']); ?>" class="enlace-artistas-discos"><?php echo $row['Nombre_Artistico']; ?></a></h2>
                             <p class="nombre-completo"><i><?php echo $row['Nombre'] . ' ' . $row['Apellido1'] . ' ' . $row['Apellido2']; ?></i></p>
                             <p class="descripcion-artista"><?php echo $row['Descripción'] ?></p>
                         </div>
                     </div>
+
 
             <?php
                     // Incrementar el índice actual
@@ -75,9 +74,8 @@
                 echo "No se encontraron artistas.";
             }
             ?>
-
-
         </div>
+
 
         <?php
         // Cerrar la conexión

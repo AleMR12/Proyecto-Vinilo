@@ -49,7 +49,7 @@ if (isset($_SESSION['cart'])) {
     <!-- PHP para mostrar el mensaje de bienvenida y los íconos -->
     <?php
     if (isset($_SESSION['usuario'])) {
-        echo '<p class="bienvenida">Bienvenido,&nbsp; ' . $_SESSION['usuario'] . '</p>';
+        echo '<p class="bienvenida">Bienvenido/a,&nbsp; ' . $_SESSION['usuario'] . '</p>';
         echo '<div class="carrito-container">'; // Contenedor adicional
         echo '<a href="../PHP/verCarrito.php">'; // Enlace al carrito
         echo '<div class="carrito" id="carrito-icono">';

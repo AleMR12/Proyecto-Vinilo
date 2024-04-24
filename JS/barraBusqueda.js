@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
         discos.forEach(function(disco) {
             var nombre = disco.querySelector(".nombre-disco").textContent.toLowerCase();
             var precio = disco.querySelector(".precio").textContent.toLowerCase();
+            var nombre_artista = disco.querySelector(".nombre-artista").textContent.toLowerCase(); // Obtener el nombre del artista
 
-            if (nombre.includes(filtro) || precio.includes(filtro)) {
+            if (nombre.includes(filtro) || precio.includes(filtro) || nombre_artista.includes(filtro)) {
                 disco.style.display = "";
             } else {
                 disco.style.display = "none";

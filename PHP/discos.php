@@ -16,6 +16,7 @@
     <script src="../JS/BarraNavegacionVertical.js"></script>
     <script src="../JS/carrito.js"></script>
     <script src="../JS/barraBusqueda.js"></script>
+    <script src="../JS/capturarTexto.js"></script>
 </head>
 
 <body>
@@ -33,8 +34,9 @@
         //Conexion a la BDD
         require('../../Mi-Proyecto/PHP/conexionBDD.php');
 
-        // Consulta para obtener los datos de los discos de vinilo
-        $sql = "SELECT * FROM discos";
+
+        // Consulta para obtener los datos de los discos de vinilo junto con los nombres de los artistas
+        $sql = "SELECT discos.*, artistas.Nombre_Artistico AS Nombre_Artista FROM discos INNER JOIN artistas ON discos.ID_Artista = artistas.ID";
         $result = $conexion->query($sql);
         ?>
 
@@ -54,18 +56,21 @@
                     // Obtener la ruta relativa eliminando el directorio raíz del servidor
                     $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
                     // Mostrar la información de cada disco de vinilo
-                    echo "<div class='disco-vinilo'>";
+                    echo "<div class='disco-vinilo' data-id-artista='" . $row['ID_Artista'] . "'>";
                     echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
                     echo "<div class='linea-vertical'></div>";
                     echo "<div class='info-disco'>";
                     echo "<h2 class='nombre-disco'>" . $row['Nombre'] . "</h2>";
                     echo "<p class='descripcion'>" . $row['Descripción'] . "</p> <br>";
                     echo "<div class='precio-existencias'>";
-                    echo "<p class='nombre-artista'><b>Artista: </b>" . obtenerNombreArtista($row['ID_Artista'], $conexion) . "</p>";
+                    echo "<p class='nombre-artista'><b>Artista: </b>" . $row['Nombre_Artista'] . "</p>";
                     echo "<p class='precio'><b>Precio:</b> $" . $row['Precio'] . "</p>";
                     echo "<p class='existencias'><b>Existencias:</b> " . $row['Existencias'] . "</p>";
-                    echo "</div>";
 
+                    // Botón para reproducir el álbum de Spotify
+                    echo "<button onclick=\"reproducirAlbum('" . $row['Nombre'] . "')\">Reproducir álbum en Spotify</button>";
+
+                    echo "</div>";
 
                     // Formulario para agregar al carrito y botón "Saber más"
                     echo "<div class='botones'>";

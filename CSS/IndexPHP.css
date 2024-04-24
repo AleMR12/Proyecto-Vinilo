@@ -222,8 +222,8 @@ a {
         display: none;
     }
 }
-/* Estilos para el archivo Artistas.php */
 
+/* Estilos para el archivo Artistas.php */
 .artista {
     margin-top: 1.5rem;
     padding: .2rem;
@@ -231,52 +231,56 @@ a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 2rem;
     display: flex;
-    flex-direction: row;
 }
 
-/* Estilos para los elementos dentro de la clase 'artista' con índice par */
-.artista:nth-child(even) .imagen-artista {
-    width: 15rem;
-    height: auto;
-    margin-right: 1rem;
-    transition: transform 0.3s ease;
-    float: left; /* Alinea la imagen a la izquierda para elementos pares */
-}
-
-.artista:nth-child(even) .info-artista {
-    flex-grow: 1;
-    margin-left: 1rem; /* Espacio entre la imagen y el texto */
-}
-
-/* Estilos para los elementos dentro de la clase 'artista' con índice impar */
+/* Estilos para los elementos dentro de la clase 'artista' con índice impar (izquierda) */
 .artista:nth-child(odd) .imagen-artista {
     width: 15rem;
     height: auto;
-    margin-left: 1rem;
     transition: transform 0.3s ease;
-    float: right; /* Alinea la imagen a la derecha para elementos impares */
 }
 
 .artista:nth-child(odd) .info-artista {
     flex-grow: 1;
-    margin-right: 1rem; /* Espacio entre la imagen y el texto */
-    
+    margin-left: .5rem;
+}
+
+/* Estilos para los elementos dentro de la clase 'artista' con índice par (derecha) */
+.artista:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse; /* Invierte la dirección de los elementos */
+}
+
+.artista:nth-child(even) h2 {
+    display:inline-block;
+}
+
+.artista:nth-child(even) .imagen-artista {
+    width: 15rem;
+    height: auto;
+    transition: transform 0.3s ease;
+    margin: 0;
+}
+
+.artista:nth-child(even) .info-artista {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+    margin-right: 1.5rem;
+    text-align: right;
 }
 
 .info-artista h2 {
     margin-top: 0;
-    border: 1px solid;
+    width: fit-content;
 }
 
 .info-artista p {
     margin: 0;
     margin-bottom: 5px;
-    border: 1px solid;
 }
 
 .imagen-artista {
     transition: transform 0.3s ease;
-    border: 1px solid red;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.752);
 }
 
 .imagen-artista:hover {
@@ -284,16 +288,19 @@ a {
 }
 
 .descripcion-artista {
-    border: 1px solid;
-    width: fit-content;
+    width: 75%;
+    display: inline-block;
 }
 
 .ultimo-artista {
     border: none;
-    margin-bottom: 1rem;
     padding-bottom: 0;
 }
 
+.enlace-artistas-discos{
+    color: black;
+    width: fit-content;
+}
 
 
 /* ESTILO PARA LA PAGINA DEL CARRITO */
