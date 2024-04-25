@@ -17,6 +17,11 @@
     <script src="../JS/carrito.js"></script>
     <script src="../JS/barraBusqueda.js"></script>
     <script src="../JS/capturarTexto.js"></script>
+
+
+    <!-- Link para Spotify -->
+    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+    <script src="../JS/Spotify.js"></script>
 </head>
 
 <body>
@@ -66,15 +71,18 @@
                     echo "<p class='nombre-artista'><b>Artista: </b>" . $row['Nombre_Artista'] . "</p>";
                     echo "<p class='precio'><b>Precio:</b> $" . $row['Precio'] . "</p>";
                     echo "<p class='existencias'><b>Existencias:</b> " . $row['Existencias'] . "</p>";
-
-                    // Botón para reproducir el álbum de Spotify
-                    echo "<button onclick=\"reproducirAlbum('" . $row['Nombre'] . "')\">Reproducir álbum en Spotify</button>";
-
                     echo "</div>";
-
                     // Formulario para agregar al carrito y botón "Saber más"
                     echo "<div class='botones'>";
                     echo "<a href='../PHP/Artistas.php'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
+
+                    // Botón de Spotify dinámico
+                    echo "<div class='episodes'>";
+                    echo "<button class='episode' data-spotify-id='" . $row['EnlaceSpotify'] . "'>";
+                    echo $row['Nombre']; // Mostrar el nombre del disco en el botón
+                    echo "</button>";
+                    echo "</div>";
+
                     // Verificar si hay una sesión iniciada antes de mostrar el botón "Añadir al carrito"
                     if (isset($_SESSION['usuario'])) {
                         echo "<form method='post' action='agregar_al_carrito.php' class='agregar-carrito-form'>";
@@ -88,6 +96,30 @@
                     }
                     echo "</div>"; // Fin de div 'botones'
                     echo "</div>"; // Fin de div 'info-disco'
+            ?>
+                    <div id="embed-iframe">
+                        <!-- Añadimos el Ifram de Spotify -->
+                        <script type="text/javascript">
+                            window.onSpotifyIframeApiReady = (IFrameAPI) => {
+                                const element = document.getElementById('embed-iframe');
+                                const options = {
+                                    width: '100%',
+                                    height: '160',
+                                    uri: 'spotify:album:4ZdVjircdr00BoV0XoYgh9'
+                                };
+                                const callback = (EmbedController) => {
+                                    document.querySelectorAll('.episode').forEach(
+                                        episode => {
+                                            episode.addEventListener('click', () => {
+                                                EmbedController.loadUri(episode.dataset.spotifyId)
+                                            });
+                                        })
+                                };
+                                IFrameAPI.createController(element, options, callback);
+                            };
+                        </script>
+                    </div>
+            <?php
                     echo "</div>"; // Fin de div 'disco-vinilo'
                 }
             } else {
