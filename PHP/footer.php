@@ -39,10 +39,10 @@
     <div class="menu-footer">
         <ul>
             <li class="lista-footer"><a href="../PHP/discos.php">DISCOS</a></li>
-            <li class="lista-footer"><a href="../HTML/Artistas.html">ARTISTAS</a></li>
-            <li class="lista-footer"><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
-            <li class="lista-footer"><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
-            <li class="lista-footer"><a href="../HTML/Contacto.html">CONTACTO</a></li>
+            <li class="lista-footer"><a href="../PHP/artistas.php">ARTISTAS</a></li>
+            <li class="lista-footer"><a href="../PHP/conciertos.php">CONCIERTOS</a></li>
+            <li class="lista-footer"><a href="../PHP/merchandising.php">MERCHANDISING</a></li>
+            <li class="lista-footer"><a href="../PHP/contacto.php">CONTACTO</a></li>
         </ul>
     </div>
 </div>

@@ -41,9 +41,9 @@ if (isset($_SESSION['cart'])) {
         <ul>
             <li><a href="../PHP/discos.php">DISCOS</a></li>
             <li><a href="../PHP/artistas.php">ARTISTAS</a></li>
-            <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
-            <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
-            <li><a href="../HTML/Contacto.html">CONTACTO</a></li>
+            <li><a href="../PHP/conciertos.php">CONCIERTOS</a></li>
+            <li><a href="../PHP/merchandising.php">MERCHANDISING</a></li>
+            <li><a href="../PHP/contacto.php">CONTACTO</a></li>
         </ul>
     </nav>
     <!-- PHP para mostrar el mensaje de bienvenida y los íconos -->

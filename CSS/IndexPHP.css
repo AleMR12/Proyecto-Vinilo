@@ -74,7 +74,23 @@ a {
     /* Puedes ajustar este valor según sea necesario */
 }
 
-.contenedor-discos,
+
+
+.contenedor-discos {
+    /* Ajustamos el tamaño del contenedor para dejar espacio para el iframe de Spotify */
+    width: calc(100% - 30rem); /* Restamos el ancho del iframe */
+    margin-left: 3rem;
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-end; /* Alineamos los botones hacia la derecha */
+}
+
+.episodes {
+    margin-right: 1rem; /* Añadimos un margen entre el botón de Spotify y los demás botones */
+}
+
 .contenedor-artistas {
     display: flex;
     flex-wrap: wrap;
@@ -96,11 +112,12 @@ a {
     height: auto;
     /* Altura automática para mantener la proporción */
     margin-right: 1rem;
-    transition: transform 0.3s ease; /* Transición suave de 0.3 segundos para el efecto de zoom */
+    transition: transform 0.3s ease;
+    /* Transición suave de 0.3 segundos para el efecto de zoom */
 
 }
 
-.imagen-disco:hover{
+.imagen-disco:hover {
 
     transform: scale(1.05);
 
@@ -135,7 +152,7 @@ a {
 }
 
 .descripcion {
-    font-style:italic;
+    font-style: italic;
     font-size: .9rem;
     width: 100%;
 }
@@ -150,6 +167,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 #busqueda {
@@ -214,14 +232,58 @@ a {
     transform: scale(1.1);
 }
 
-/* Lo que pasa cuando la pantalla es menor a 1250px */
+.desplazable {
+    position: fixed;
+    top: 32%; /* Ajusta la posición inicial del div */
+    left: 72%; /* Centra horizontalmente el div */
+    transition: top 0.3s; /* Agrega una transición suave */
+    width: fit-content;
+}
+
+.episode{
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.episode:hover{
+
+    transform: scale(1.2);
+
+
+}
+
+
+
+
+
+
+/* Lo qu pasa cuando la pantalla es menor a 1250px */
 @media (max-width:1250px) {
+
     .bienvenida,
     .enlace-imagen-cerrar,
     .carrito {
         display: none;
     }
+
+    #miDiv{
+
+        display: none;
+    }
+
+    .contenedor-discos{
+
+        width: fit-content;
+        margin-right: 3rem;
+    }
+
 }
+
+
 
 /* Estilos para el archivo Artistas.php */
 .artista {
@@ -248,11 +310,12 @@ a {
 /* Estilos para los elementos dentro de la clase 'artista' con índice par (derecha) */
 .artista:nth-child(even) {
     display: flex;
-    flex-direction: row-reverse; /* Invierte la dirección de los elementos */
+    flex-direction: row-reverse;
+    /* Invierte la dirección de los elementos */
 }
 
 .artista:nth-child(even) h2 {
-    display:inline-block;
+    display: inline-block;
 }
 
 .artista:nth-child(even) .imagen-artista {
@@ -263,7 +326,8 @@ a {
 }
 
 .artista:nth-child(even) .info-artista {
-    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+    flex-grow: 1;
+    /* Permite que el texto ocupe el espacio restante */
     margin-right: 1.5rem;
     text-align: right;
 }
@@ -297,10 +361,12 @@ a {
     padding-bottom: 0;
 }
 
-.enlace-artistas-discos{
+.enlace-artistas-discos {
     color: black;
     width: fit-content;
 }
+
+
 
 
 /* ESTILO PARA LA PAGINA DEL CARRITO */

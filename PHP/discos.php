@@ -9,8 +9,9 @@
     <!-- Ponemos el icono la ventana -->
     <link rel="icon" type="image/x-icon" href="../Imagenes/Extras/IsotipoMV.png">
 
-    <!-- Ponemos el icono para añadir al carrito -->
+    <!-- Ponemos el icono para añadir al carrito y el play del discos -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- Agregamos los archivos Javascript -->
     <script src="../JS/BarraNavegacionVertical.js"></script>
@@ -43,89 +44,111 @@
         // Consulta para obtener los datos de los discos de vinilo junto con los nombres de los artistas
         $sql = "SELECT discos.*, artistas.Nombre_Artistico AS Nombre_Artista FROM discos INNER JOIN artistas ON discos.ID_Artista = artistas.ID";
         $result = $conexion->query($sql);
+
+        // Obtener la URI de Spotify del primer disco de la base de datos para el album por defecto del iFrame de spotify
+        $sql_uri = "SELECT EnlaceSpotify FROM discos LIMIT 1";
+        $result_uri = $conexion->query($sql_uri);
+
+        if ($result_uri->num_rows > 0) {
+            $row_uri = $result_uri->fetch_assoc();
+            $spotify_uri = $row_uri['EnlaceSpotify'];
+        } else {
+            // Si no se encuentra ninguna URI, utiliza una por defecto
+            $spotify_uri = 'spotify:album:37i9dQZF1DXcd2Vmhfon1w'; // URI de ejemplo
+        }
+
         ?>
 
-        <!-- Le damos clase al div -->
-        <div class="contenedor-discos">
+        <div>
+
+            <div id="miDiv" class="desplazable">
+                <div id="embed-iframe">
+                    <!-- Añadimos el Ifram de Spotify -->
+                    <script type="text/javascript">
+                        window.onSpotifyIframeApiReady = (IFrameAPI) => {
+                            const element = document.getElementById('embed-iframe');
+                            const options = {
+                                width: '400px',
+                                height: 'fit-content',
+                                uri: '<?php echo $spotify_uri; ?>' // URI obtenida de la base de datos
+                            };
+                            const callback = (EmbedController) => {
+                                document.querySelectorAll('.episode').forEach(
+                                    episode => {
+                                        episode.addEventListener('click', () => {
+                                            EmbedController.loadUri(episode.dataset.spotifyId)
+                                        });
+                                    })
+                            };
+                            IFrameAPI.createController(element, options, callback);
+                        };
+                    </script>
+                </div>
+            </div>
 
             <!-- Contenedor Barra de busqueda -->
             <div class="contenedor-busqueda">
                 <!-- Barra de búsqueda -->
                 <input type="text" id="busqueda" placeholder="Buscar...">
             </div>
-            <?php
-            // Verificar si se encontraron resultados
-            if ($result->num_rows > 0) {
-                // Iterar sobre cada fila de resultados
-                while ($row = $result->fetch_assoc()) {
-                    // Obtener la ruta relativa eliminando el directorio raíz del servidor
-                    $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
-                    // Mostrar la información de cada disco de vinilo
-                    echo "<div class='disco-vinilo' data-id-artista='" . $row['ID_Artista'] . "'>";
-                    echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
-                    echo "<div class='linea-vertical'></div>";
-                    echo "<div class='info-disco'>";
-                    echo "<h2 class='nombre-disco'>" . $row['Nombre'] . "</h2>";
-                    echo "<p class='descripcion'>" . $row['Descripción'] . "</p> <br>";
-                    echo "<div class='precio-existencias'>";
-                    echo "<p class='nombre-artista'><b>Artista: </b>" . $row['Nombre_Artista'] . "</p>";
-                    echo "<p class='precio'><b>Precio:</b> $" . $row['Precio'] . "</p>";
-                    echo "<p class='existencias'><b>Existencias:</b> " . $row['Existencias'] . "</p>";
-                    echo "</div>";
-                    // Formulario para agregar al carrito y botón "Saber más"
-                    echo "<div class='botones'>";
-                    echo "<a href='../PHP/Artistas.php'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
 
-                    // Botón de Spotify dinámico
-                    echo "<div class='episodes'>";
-                    echo "<button class='episode' data-spotify-id='" . $row['EnlaceSpotify'] . "'>";
-                    echo $row['Nombre']; // Mostrar el nombre del disco en el botón
-                    echo "</button>";
-                    echo "</div>";
+            <!-- Le damos clase al div -->
+            <div class="contenedor-discos">
 
-                    // Verificar si hay una sesión iniciada antes de mostrar el botón "Añadir al carrito"
-                    if (isset($_SESSION['usuario'])) {
-                        echo "<form method='post' action='agregar_al_carrito.php' class='agregar-carrito-form'>";
-                        echo "<input type='hidden' name='product_id' value='" . $row['ID'] . "'>"; // Aquí se incluye el ID del producto
-                        echo "<input type='hidden' name='product_name' value='" . $row['Nombre'] . "'>";
-                        echo "<input type='hidden' name='product_price' value='" . $row['Precio'] . "'>";
-                        echo "<button type='submit' name='add_to_cart' class='carrito-btn'>";
-                        echo "<span class='material-symbols-outlined'>add_shopping_cart</span>";
+
+                <?php
+                // Verificar si se encontraron resultados
+                if ($result->num_rows > 0) {
+                    // Iterar sobre cada fila de resultados
+                    while ($row = $result->fetch_assoc()) {
+                        // Obtener la ruta relativa eliminando el directorio raíz del servidor
+                        $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
+                        // Mostrar la información de cada disco de vinilo
+                        echo "<div class='disco-vinilo' data-id-artista='" . $row['ID_Artista'] . "'>";
+                        echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
+                        echo "<div class='linea-vertical'></div>";
+                        echo "<div class='info-disco'>";
+                        echo "<h2 class='nombre-disco'>" . $row['Nombre'] . "</h2>";
+                        echo "<p class='descripcion'>" . $row['Descripción'] . "</p> <br>";
+                        echo "<div class='precio-existencias'>";
+                        echo "<p class='nombre-artista'><b>Artista: </b>" . $row['Nombre_Artista'] . "</p>";
+                        echo "<p class='precio'><b>Precio:</b> $" . $row['Precio'] . "</p>";
+                        echo "<p class='existencias'><b>Existencias:</b> " . $row['Existencias'] . "</p>";
+                        echo "</div>";
+                        // Formulario para agregar al carrito y botón "Saber más"
+                        echo "<div class='botones'>";
+
+                        // Botón de Spotify dinámico
+                        // Reemplaza el botón por el icono play_arrow dentro de un botón
+                        echo "<div class='episodes'>";
+                        echo "<button class='episode' data-spotify-id='" . $row['EnlaceSpotify'] . "'>";
+                        echo "<span class='material-symbols-outlined'>play_arrow</span>";
                         echo "</button>";
-                        echo "</form>";
+                        echo "</div>";
+
+
+                        // Verificar si hay una sesión iniciada antes de mostrar el botón "Añadir al carrito"
+                        if (isset($_SESSION['usuario'])) {
+                            echo "<form method='post' action='agregar_al_carrito.php' class='agregar-carrito-form'>";
+                            echo "<input type='hidden' name='product_id' value='" . $row['ID'] . "'>"; // Aquí se incluye el ID del producto
+                            echo "<input type='hidden' name='product_name' value='" . $row['Nombre'] . "'>";
+                            echo "<input type='hidden' name='product_price' value='" . $row['Precio'] . "'>";
+                            echo "<button type='submit' name='add_to_cart' class='carrito-btn'>";
+                            echo "<span class='material-symbols-outlined'>add_shopping_cart</span>";
+                            echo "</button>";
+                            echo "</form>";
+                        }
+                        echo "<a href='../PHP/Artistas.php'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
+                        echo "</div>"; // Fin de div 'botones'
+                        echo "</div>"; // Fin de div 'info-disco'
+                        echo "</div>"; // Fin de div 'disco-vinilo'
                     }
-                    echo "</div>"; // Fin de div 'botones'
-                    echo "</div>"; // Fin de div 'info-disco'
-            ?>
-                    <div id="embed-iframe">
-                        <!-- Añadimos el Ifram de Spotify -->
-                        <script type="text/javascript">
-                            window.onSpotifyIframeApiReady = (IFrameAPI) => {
-                                const element = document.getElementById('embed-iframe');
-                                const options = {
-                                    width: '100%',
-                                    height: '160',
-                                    uri: 'spotify:album:4ZdVjircdr00BoV0XoYgh9'
-                                };
-                                const callback = (EmbedController) => {
-                                    document.querySelectorAll('.episode').forEach(
-                                        episode => {
-                                            episode.addEventListener('click', () => {
-                                                EmbedController.loadUri(episode.dataset.spotifyId)
-                                            });
-                                        })
-                                };
-                                IFrameAPI.createController(element, options, callback);
-                            };
-                        </script>
-                    </div>
-            <?php
-                    echo "</div>"; // Fin de div 'disco-vinilo'
+                } else {
+                    echo "No se encontraron discos de vinilo.";
                 }
-            } else {
-                echo "No se encontraron discos de vinilo.";
-            }
-            ?>
+                ?>
+            </div>
+
         </div>
 
         <?php
@@ -147,7 +170,13 @@
                     <li id="CerrarMenu" onclick="closeSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                             </svg></a></li>
-                    <li><a href="../PHP/cerrarSesion.php">CERRAR SESIÓN</a></li>
+                    <?php
+                    if (isset($_SESSION['usuario'])) {
+                        echo "<li><a href='../PHP/cerrarSesion.php'>CERRAR SESIÓN</a></li>";
+                    } else {
+                        echo "<li><a href='../HTML/LogIn.html'>INICIAR SESIÓN</a></li>";
+                    }
+                    ?>
                     <li><a href="../PHP/Index.php">INICIO</a></li>
                     <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
                     <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
@@ -157,6 +186,7 @@
             </nav>
         </div>
 
+
     </main>
 
     <!-- Footer de la página -->
@@ -165,6 +195,7 @@
         require('footer.php');
         ?>
     </footer>
+
 
 </body>
 
