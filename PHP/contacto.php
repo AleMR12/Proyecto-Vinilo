@@ -5,91 +5,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Vinilo</title>
-
-    <!-- Ponemos el icono la ventana -->
     <link rel="icon" type="image/x-icon" href="../Imagenes/Extras/IsotipoMV.png">
-
-    <!-- Le damos estilo -->
     <style>
         /* Estilos para el mapa */
-        #map {
-            height: 400px;
-            width: 100%;
+        #map-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: auto;
+            margin-top: 2rem;
+            /* Añadido margen arriba */
+            margin-left: 2rem;
+            /* Añadido margen izquierdo */
         }
 
-        /* Estilos para el chat */
-        #chat-widget {
+        #map {
+            flex: 1;
+            height: 100%;
+        }
+
+        /* Estilos para la sección de información */
+        #info-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Estilos para el chat de soporte */
+        #chat-container {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border-top: 1px solid #ccc;
             padding: 10px;
         }
 
-        #chat-widget h3 {
-            margin: 0;
+        #chat-input {
+            width: calc(100% - 80px);
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #send-button {
+            width: 60px;
+            padding: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #messages-container {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        .message {
+            margin-bottom: 5px;
+        }
+
+        .message.sender {
+            text-align: right;
+        }
+
+        .message.sender .message-content {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .message.receiver .message-content {
+            background-color: #f1f1f1;
+            color: #000;
         }
     </style>
-
-    <!-- Agrega el script de Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
-    <script>
-        // Función para inicializar el mapa
-        function initMap() {
-            // Coordenadas de la empresa
-            var empresa = {
-                lat: 36.723382,
-                lng: -4.419884
-            };
-            // Crear el mapa centrado en la empresa
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: empresa
-            });
-            // Marcar la ubicación de la empresa en el mapa
-            var marker = new google.maps.Marker({
-                position: empresa,
-                map: map,
-                title: 'Empresa'
-            });
-        }
-    </script>
 </head>
 
 <body>
 
     <header>
-
         <?php
         require('Header.php');
         ?>
-
     </header>
 
-    <!-- Mapa de Google -->
-    <div id="map"></div>
+    <main>
+        <!-- Contenedor para el mapa y la información -->
+        <div id="map-container">
+            <!-- Mapa -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.8323647478624!2d-4.42611632453851!3d36.72658707226817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7bc017dba91%3A0x42ebc77aa4a51db6!2sC.%20Oller%C3%ADas%2C%2077%2C%20Distrito%20Centro%2C%2029012%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1715547802387!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <!-- Información de contacto -->
-    <h2>Dirección</h2>
-    <p>C. Ollerías, 77, Distrito Centro, 29012 Málaga</p>
-    <p>Teléfono: +34 672 65 95 24</p>
+            <!-- Información de contacto -->
+            <div id="info-section">
+                <h2>Datos de Contacto</h2>
+                <p>mundovinilo@mundovinilo.com</p>
+                <p>Teléfono: +34 672 65 95 24</p>
+            </div>
+        </div>
+    </main>
 
-    <!-- Chat de soporte rápido -->
-    <div id="chat-widget">
-        <h3>¿Necesitas ayuda?</h3>
-        <p>Habla con nosotros en tiempo real.</p>
-        <button onclick="openChat()">Abrir Chat</button>
+    <footer>
+        <?php
+        require('footer.php');
+        ?>
+    </footer>
+
+    <!-- Chat de soporte -->
+    <div id="chat-container">
+        <div id="messages-container"></div>
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje aquí...">
+        <button id="send-button">Enviar</button>
     </div>
 
-    <!-- Script para abrir el chat -->
-    <script>
-        function openChat() {
-            // Aquí podrías agregar el código necesario para abrir el chat de soporte rápido
-            alert("Abriendo chat...");
-        }
-    </script>
+    <script src="../JS/chatsoporte.js"></script>
+
 </body>
 
 </html>

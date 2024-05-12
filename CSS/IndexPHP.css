@@ -209,12 +209,14 @@ a {
     display: flex;
     float: right;
     transition: background-color 0.3s ease;
-    margin-left: 1rem;
+    
 }
 
 .saber-mas:hover {
     background-color: #9e0505;
 }
+
+
 
 .carrito-btn {
     background-color: transparent;
@@ -226,6 +228,7 @@ a {
     display: flex;
     float: inline-end;
     transition: transform 0.2s ease-in-out;
+    margin-right: 1rem;
 }
 
 .carrito-btn:hover {

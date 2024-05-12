@@ -96,6 +96,10 @@ input:focus ~ label, input:valid ~ label {
     top: 20px;
 }
 
+.input[type="password"]::placeholder{
+    color: white;
+}
+
 button {
     width: 100%;
     height: 40px;

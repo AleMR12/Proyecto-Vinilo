@@ -23,6 +23,8 @@
     <!-- Link para Spotify -->
     <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
     <script src="../JS/Spotify.js"></script>
+
+
 </head>
 
 <body>
@@ -60,7 +62,6 @@
         ?>
 
         <div>
-
             <div id="miDiv" class="desplazable">
                 <div id="embed-iframe">
                     <!-- Añadimos el Ifram de Spotify -->
@@ -103,6 +104,17 @@
                     while ($row = $result->fetch_assoc()) {
                         // Obtener la ruta relativa eliminando el directorio raíz del servidor
                         $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
+
+                        // Escapar los valores antes de usarlos en la consulta SQL
+                        $id = mysqli_real_escape_string($conexion, $row['ID']);
+                        $nombre = mysqli_real_escape_string($conexion, $row['Nombre']);
+                        $descripcion = mysqli_real_escape_string($conexion, $row['Descripción']);
+                        $precio = mysqli_real_escape_string($conexion, $row['Precio']);
+                        $existencias = mysqli_real_escape_string($conexion, $row['Existencias']);
+                        $id_artista = mysqli_real_escape_string($conexion, $row['ID_Artista']);
+                        $nombre_artista = mysqli_real_escape_string($conexion, $row['Nombre_Artista']);
+                        $enlace_spotify = mysqli_real_escape_string($conexion, $row['EnlaceSpotify']);
+
                         // Mostrar la información de cada disco de vinilo
                         echo "<div class='disco-vinilo' data-id-artista='" . $row['ID_Artista'] . "'>";
                         echo "<img src='" . $ruta_relativa . "' alt='" . $row['Nombre'] . "' class='imagen-disco'>";
@@ -138,7 +150,7 @@
                             echo "</button>";
                             echo "</form>";
                         }
-                        echo "<a href='../PHP/Artistas.php'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
+                        echo "<a href='../PHP/Artistas.php' class='enlace-saber-mas'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
                         echo "</div>"; // Fin de div 'botones'
                         echo "</div>"; // Fin de div 'info-disco'
                         echo "</div>"; // Fin de div 'disco-vinilo'
