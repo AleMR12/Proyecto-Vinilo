@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Vinilo</title>
+    <title>Mundo Vinilo - Discos</title>
 
     <!-- Ponemos el icono la ventana -->
     <link rel="icon" type="image/x-icon" href="../Imagenes/Extras/IsotipoMV.png">
@@ -190,10 +190,10 @@
                     }
                     ?>
                     <li><a href="../PHP/Index.php">INICIO</a></li>
-                    <li><a href="../HTML/Artistas.html">ARTISTAS</a></li>
-                    <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
-                    <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
-                    <li><a href="../HTML/Contacto.html">CONTACTO</a></li>
+                    <li><a href="../PHP/Artistas.php">ARTISTAS</a></li>
+                    <li><a href="../PHP/Conciertos.php">CONCIERTOS</a></li>
+                    <li><a href="../PHP/Merchandising.php">MERCHANDISING</a></li>
+                    <li><a href="../PHP/Contacto.php">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>

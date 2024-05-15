@@ -1,0 +1,135 @@
+/* Estilos para el mapa */
+#map-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    margin-top: 2rem; /* Añadido margen arriba */
+    margin-left: 2rem; /* Añadido margen izquierdo */
+}
+
+#map {
+    flex: 1;
+    height: 100%;
+}
+
+#chat-container.minimized #messages-container,
+#chat-container.minimized #chat-input,
+#chat-container.minimized #send-button {
+    display: none;
+}
+
+#messages-container {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.message {
+    margin-bottom: 5px;
+    display: flex;
+    margin: .5rem .1rem;
+}
+
+.message.sender {
+    justify-content: flex-end; /* Alinear los mensajes enviados a la derecha */
+    text-align: end;
+}
+
+.message.sender .message-content {
+    background-color: #f9f9f9;
+    color: #000;
+    border-radius: .2rem;
+    padding: .2rem;
+    width: fit-content;
+    display: flex;
+    text-align: end;
+}
+
+.message-receiver .message-content {
+    background-color: #f1f1f1;
+    color: #000;
+    border-radius: .2rem;
+    padding: .2rem;
+    width: fit-content;
+    display: flex;
+    text-align: start;
+}
+
+/* Estilos para la barra de desplazamiento */
+#messages-container::-webkit-scrollbar {
+    width: 8px;
+    margin-top: .5rem;
+}
+
+#messages-container::-webkit-scrollbar-thumb {
+    background-color: #a1a0a0;
+    border-radius: 4px;
+}
+
+/* Estilos para la sección de información */
+#info-section {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Estilos para el chat de soporte */
+#chat-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20rem;
+    background-color: #e1e1e1;
+}
+
+#chat-header {
+    background-color: #b83030;
+    color: white;
+    padding: .3rem .1rem .3rem .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toggle-button {
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding-top: .2rem;
+}
+
+#chat-container.minimized {
+    height: 40px;
+}
+
+#chat-input {
+    width: 100%;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: .3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#send-button {
+    width: 3.5rem;
+    height: 2rem;
+    padding: .2rem;
+    margin-top: .8rem;
+    margin-right: .5rem;
+    background-color: #b83030;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input-container {
+    background-color: white;
+    display: flex;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.358); /* Desplazamiento vertical, horizontal, desenfoque, color de sombra */
+}

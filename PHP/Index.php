@@ -141,12 +141,18 @@
                     <li id="CerrarMenu" onclick="closeSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                             </svg></a></li>
-                    <li><a href="../PHP/cerrarSesion.php">CERRAR SESIÓN</a></li>
+                    <?php
+                    if (isset($_SESSION['usuario'])) {
+                        echo "<li><a href='../PHP/cerrarSesion.php'>CERRAR SESIÓN</a></li>";
+                    } else {
+                        echo "<li><a href='../HTML/LogIn.html'>INICIAR SESIÓN</a></li>";
+                    }
+                    ?>
                     <li><a href="../PHP/discos.php">DISCOS</a></li>
                     <li><a href="../PHP/artistas.php">ARTISTAS</a></li>
-                    <li><a href="../HTML/Conciertos.html">CONCIERTOS</a></li>
-                    <li><a href="../HTML/Merchandising.html">MERCHANDISING</a></li>
-                    <li><a href="../HTML/Contacto.html">CONTACTO</a></li>
+                    <li><a href="../PHP/Conciertos.php">CONCIERTOS</a></li>
+                    <li><a href="../PHP/Merchandising.php">MERCHANDISING</a></li>
+                    <li><a href="../PHPm/Contacto.php">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
