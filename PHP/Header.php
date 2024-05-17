@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(0); // La sesión expirará al cerrar el navegador
 session_start();
 
 // Obtener la cantidad total de productos en el carrito
@@ -48,8 +49,8 @@ if (isset($_SESSION['cart'])) {
     </nav>
     <!-- PHP para mostrar el mensaje de bienvenida y los íconos -->
     <?php
-    if (isset($_SESSION['usuario'])) {
-        echo '<p class="bienvenida">Bienvenido/a,&nbsp; ' . $_SESSION['usuario'] . '</p>';
+    if ((isset($_SESSION['usuario']) or (isset($_SESSION['user_id'])))) {
+        echo '<p class="bienvenida"><a href="../PHP/verPedidos.php">Bienvenido/a,&nbsp; ' . $_SESSION['usuario'] . '</a></p>';
         echo '<div class="carrito-container">'; // Contenedor adicional
         echo '<a href="../PHP/verCarrito.php">'; // Enlace al carrito
         echo '<div class="carrito" id="carrito-icono">';

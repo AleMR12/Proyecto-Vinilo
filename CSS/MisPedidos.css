@@ -1,0 +1,355 @@
+/* CSS Original */
+.pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 1em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pedido:last-child {
+    margin-bottom: 0;
+}
+
+.pedido:hover {
+    /* transform: translateY(-5px); */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.207);
+}
+
+.boton-detalles {
+    display: inline-block;
+    margin-top: 10px;
+
+}
+    /* CSS Original */
+    .pedido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 1em;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .pedido:last-child {
+        margin-bottom: 0;
+    }
+
+    .pedido:hover {
+        /* transform: translateY(-5px); */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.207);
+    }
+
+    .boton-detalles {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #b83030;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .boton-detalles:hover {
+        background-color: #a12828;
+    }
+
+    .boton-detalles:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(184, 48, 48, 0.3);
+    }
+
+    /* CSS para DETALLES DE PEDIDOS */
+    main {
+        padding: 2em;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .titulo {
+        margin: 1rem 0 2rem 0;
+        text-align: center;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .realizar-pedidos {
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
+    .Debes-iniciar-sesion {
+
+        text-align: center;
+        margin-top: .9rem;
+    }
+
+    .contenedor-detalles-pedido {
+        background-color: #fff;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .detalle-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2em;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1em;
+        font-size: .9rem;
+    }
+
+    .detalle-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .detalle-info {
+        flex-grow: 2;
+        min-width: 15rem;
+    }
+
+    .detalle-info p {
+        margin-bottom: .8rem;
+    }
+
+    .detalle-info p strong {
+        color: #000000;
+    }
+
+    .descripcion-info {
+        flex-grow: 1;
+    }
+
+    .descripcion-info p {
+        margin-bottom: 0.5em;
+        margin-left: .5rem;
+    }
+
+    .descripcion-info .ver-disco {
+        display: block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #b83030;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .descripcion-info .ver-disco:hover {
+        background-color: #a12828;
+    }
+
+    .total-pedido {
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 2em;
+    }
+
+    #realizar-pedido-aqui {
+        text-align: center;
+    }
+
+    #realizar-pedido-aqui p {
+        margin-bottom: 10px;
+    }
+
+    #miEnlace {
+        cursor: pointer;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    h1 {
+        text-align: center;
+        color: #000000;
+        margin-bottom: 1.5em;
+    }
+
+    .contenedor-pedidos {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .pedido p {
+        margin: 0.5em 0;
+    }
+
+    .realizar-pedidos {
+        margin-top: 2em;
+    }
+
+    .realizar-pedidos p {
+        font-size: 1.1rem;
+    }
+
+    .boton-detalles:hover {
+        background-color: #a12828;
+    }
+
+    .boton-detalles:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(184, 48, 48, 0.3);
+    }
+
+    /* CSS para DETALLES DE PEDIDOS */
+    main {
+        padding: 2em;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .titulo {
+        margin: 1rem 0 2rem 0;
+        text-align: center;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .realizar-pedidos {
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
+    .realizar-pedidos a {
+        color: #000000;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+
+    .contenedor-detalles-pedido {
+        background-color: #fff;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .detalle-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2em;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1em;
+        font-size: .9rem;
+    }
+
+    .detalle-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .detalle-info {
+        flex-grow: 2;
+        min-width: 15rem;
+    }
+
+    .detalle-info p {
+        margin-bottom: .8rem;
+    }
+
+    .detalle-info p strong {
+        color: #000000;
+    }
+
+    .descripcion-info {
+        flex-grow: 1;
+    }
+
+    .descripcion-info p {
+        margin-bottom: 0.5em;
+        margin-left: .5rem;
+    }
+
+    .total-pedido {
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 2em;
+    }
+
+    #realizar-pedido-aqui {
+        text-align: center;
+    }
+
+    #realizar-pedido-aqui p {
+        margin-bottom: 10px;
+    }
+
+    #miEnlace {
+        cursor: pointer;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+
+    h1 {
+        text-align: center;
+        color: #000000;
+        margin-bottom: 1.5em;
+    }
+
+    .contenedor-pedidos {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .pedido p {
+        margin: 0.5em 0;
+    }
+
+    .realizar-pedidos {
+        margin-top: 2em;
+    }
+
+    .realizar-pedidos p {
+        font-size: 1.1rem;
+    }
+
+
+    .ver-disco {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #b83030;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ver-disco:hover {
+        background-color: #a12828;
+    }
+
+    .ver-disco:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(184, 48, 48, 0.3);
+    }

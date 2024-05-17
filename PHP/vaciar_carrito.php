@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(0); // La sesión expirará al cerrar el navegador
 session_start();
 
 // Verificar si se ha enviado una solicitud para vaciar el carrito

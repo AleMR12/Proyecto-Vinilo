@@ -1,5 +1,6 @@
     <?php
     // Iniciar la sesión
+    session_set_cookie_params(0); // La sesión expirará al cerrar el navegador
     session_start();
 
     // Recoger los datos del formulario
@@ -35,7 +36,7 @@
             $_SESSION['usuario'] = $usuario;
 
             // Redirigir al usuario a la página de inicio
-            header("Location: ../PHP/Index.php");
+            header("Location: ../HTML/LogIn.html");
             exit(); // Asegurarse de que el script se detenga después de la redirección
         } else {
             echo "Error al insertar datos: " . mysqli_error($conexion);

@@ -260,10 +260,6 @@ a {
 }
 
 
-
-
-
-
 /* Lo qu pasa cuando la pantalla es menor a 1250px */
 @media (max-width:1250px) {
 
@@ -370,12 +366,10 @@ a {
 }
 
 
-
-
 /* ESTILO PARA LA PAGINA DEL CARRITO */
 .container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 50rem;
+    margin: 3rem auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;

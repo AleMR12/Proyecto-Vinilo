@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -124,7 +124,7 @@
                         echo "<p class='descripcion'>" . $row['Descripción'] . "</p> <br>";
                         echo "<div class='precio-existencias'>";
                         echo "<p class='nombre-artista'><b>Artista: </b>" . $row['Nombre_Artista'] . "</p>";
-                        echo "<p class='precio'><b>Precio:</b> $" . $row['Precio'] . "</p>";
+                        echo "<p class='precio'><b>Precio:</b> €" . $row['Precio'] . "</p>";
                         echo "<p class='existencias'><b>Existencias:</b> " . $row['Existencias'] . "</p>";
                         echo "</div>";
                         // Formulario para agregar al carrito y botón "Saber más"

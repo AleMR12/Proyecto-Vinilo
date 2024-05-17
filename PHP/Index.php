@@ -28,7 +28,7 @@
 
     <!-- Cuerpo de la página -->
     <main>
-
+        
         <!--mostPopular-->
         <p class="etiquetaCentral">most<span>Popular</span></p>
 
@@ -86,10 +86,10 @@
                     </li>
                     <li class="item">
                         <a href="../PHP/discos.php">
-                            <img src="../Imagenes/Vinilos/ViniloRemixes.png" alt="Disco 3">
+                            <img src="../Imagenes/Vinilos/ViniloYIPIYOU.png" alt="Disco 3">
                         </a>
                         <a href="../PHP/discos.php">
-                            <p id="p7">Remixes y Regalos</p>
+                            <p id="p6">YIPIYOU</p>
                         </a>
                     </li>
                 </ul>
@@ -110,8 +110,8 @@
                     <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloMMCD.png" alt="Disco 3"></a>
                         <p>Me Muevo Con Dios</p>
                     </li>
-                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloYIPIYOU.png" alt="Disco 3"></a>
-                        <p>YIPIYOU</p>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloTiritirando.png" alt="Disco 3"></a>
+                        <p>TIrititando</p>
                     </li>
                     <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloBBO.png" alt="Disco 3"></a>
                         <p>BBO</p>
@@ -121,6 +121,9 @@
                     </li>
                     <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloBrownBoy.png" alt="Disco 3"></a>
                         <p>Brown Boy</p>
+                    </li>
+                    <li class="item"><a href="../PHP/discos.php"><img src="../Imagenes/Vinilos/ViniloLucesFuera.png" alt="Disco 3"></a>
+                        <p>Luces Fuera</p>
                     </li>
                 </ul>
             </div>

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2024 a las 12:46:28
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: May 15, 2024 at 08:43 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `mundovinilo`
+-- Database: `mundovinilo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `artistas`
+-- Table structure for table `artistas`
 --
 
 CREATE TABLE `artistas` (
@@ -38,7 +38,7 @@ CREATE TABLE `artistas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `artistas`
+-- Dumping data for table `artistas`
 --
 
 INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apellido2`, `Descripción`, `Foto`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apelli
 (3, 'Cruz Cafuné', 'Carlos', 'Bruñas', 'Zamorín', 'El talentoso rapero originario de las Islas Canarias, destaca por su estilo fresco y auténtico. Con letras que exploran la vida urbana y la juventud, su música fusiona el rap con influencias de R&B y reggae, creando un sonido único y atrapante. Con un enfoque genuino y letras reflexivas, Cruz Cafuné cautiva a su audiencia con su autenticidad y pasión por la música.', '../../Mi-Proyecto/Imagenes/BD/Cruzzi.jpg'),
 (4, 'Hoke', ' Héctor', ' ', ' ', '', '../../Mi-Proyecto/Imagenes/BD/Hoke.jpg'),
 (5, 'C. Tangana', 'Antón', 'Álvarez', 'Alfaro', '', '../../Mi-Proyecto/Imagenes/BD/CTangana.jpg'),
-(6, 'SFDK', 'Saturnino ', 'Rey', 'García', '', '../../Mi-Proyecto/Imagenes/BD/SFDK.jpg'),
+(6, 'SFDK', 'Saturnino ', 'Rey', 'García', 'SFDK, acrónimo de \"Siempre Fuertes De Conciencia\", es un dúo de rap formado en Sevilla, España, en 1993 por Zatu y Acción Sánchez. Han sido pioneros del rap en español y han dejado una marca indeleble en la escena hip-hop de habla hispana con su estilo único y letras profundas.', '../../Mi-Proyecto/Imagenes/BD/SFDK.jpg'),
 (7, 'Abhir ', 'Abhir ', 'Hathiramani', ' ', '', '../../Mi-Proyecto/Imagenes/BD/Abhir.jpg'),
 (8, 'Kaze', 'Cristian ', 'Carrión', ' Chacón', '', '../../Mi-Proyecto/Imagenes/BD/Kaze.jpg'),
 (9, 'Fernando Costa', 'Fernando ', 'Costa ', 'Morales', '', '../../Mi-Proyecto/Imagenes/BD/Fernandito.jpg'),
@@ -55,7 +55,7 @@ INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apelli
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carrito`
+-- Table structure for table `carrito`
 --
 
 CREATE TABLE `carrito` (
@@ -68,7 +68,7 @@ CREATE TABLE `carrito` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalles_pedidos`
+-- Table structure for table `detalles_pedidos`
 --
 
 CREATE TABLE `detalles_pedidos` (
@@ -81,7 +81,7 @@ CREATE TABLE `detalles_pedidos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `discos`
+-- Table structure for table `discos`
 --
 
 CREATE TABLE `discos` (
@@ -91,32 +91,32 @@ CREATE TABLE `discos` (
   `Precio` float NOT NULL,
   `Existencias` int(3) NOT NULL,
   `Foto` varchar(200) NOT NULL,
-  `EnlaceSpotify` varchar(200) NOT NULL,
+  `EnlaceSpotify` varchar(500) NOT NULL,
   `ID_Artista` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `discos`
+-- Dumping data for table `discos`
 --
 
 INSERT INTO `discos` (`ID`, `Nombre`, `Descripción`, `Precio`, `Existencias`, `Foto`, `EnlaceSpotify`, `ID_Artista`) VALUES
-(1, 'BBO', 'El esperado álbum debut del talentoso rapero Hoke, que ha estado ganando reconocimiento en la escena underground con su estilo fresco y líricas impactantes. \r\nSi este álbum resulta tan especial no es solo por el salto a nivel musical que supone respecto de otras referencias de un género que peca demasiado –como todos los géneros clásicos– de ombliguismo y falta de evolución; sino por revivir el espíritu de un rap clásico underground –subterráneo a la manera beat– donde, desde hace tiempo, la originalidad estaba reñida con la autenticidad.', 20, 30, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloBBO.png', '', 4),
-(2, 'Brown Boy', 'Un disco que gana con cada escucha, y su profundidad es de esas en las que no haces pie ni aunque quieras. El ruido a su alrededor le habrá puesto en el punto de mira, pero Abhir quiere ser el ojo del huracán, y eso no hay quien lo pueda crear salvo él mismo.', 12, 20, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloBrownBoy.png', '', 7),
-(3, 'Héroe', 'Una década después del primer trabajo conjunto mano a mano de Toteking & Shotta titulado “Tu madre es una foca”, los hermanos sevillanos vuelven a reunirse para entregar un nuevo álbum hasta arriba de cabreo, hostias y crítica social a borbotones. “Héroe” es una pieza exhaustiva de compromiso lírico sin precedentes, pues tal y como reza en el interior del disco por recuerdo del Nobel de Literatura de 1915 Romain Rolland: “un héroe es todo aquel que hace lo que puede”.', 8, 10, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloHeroe.png', '', 1),
-(4, 'Nombre Dirección', 'Este nuevo trabajo marca un hito en la carrera del artista, introduciendo elementos electrónicos y percusiones inusuales en el mundo del rap, creando así una experiencia sonora única que ya ha sido catalogada como uno de los discos del año. El artista, conocido por su estilo inconfundible y líricas impactantes, decidió dar un giro radical en su música. Con más de 200 canciones previas en su haber, Kaze buscaba reinventarse y sorprenderse a sí mismo.', 18, 40, '../../Mi-Proyecto/Imagenes/BD/ViniloNombreDireccion.png', '', 8),
-(5, 'YIPIYOU', 'Un álbum que destaca por su frescura y originalidad en la escena del rap en español. Costa presenta un trabajo enérgico y lleno de personalidad, donde fusiona habilidades líricas con una producción musical vibrante y variada.\r\n\r\nUna de las fortalezas de \"Yipiyou\" radica en la versatilidad de Costa como artista. Desde pistas con ritmos contagiosos que invitan al movimiento hasta canciones más introspectivas que exploran temas profundos y personales, el álbum ofrece una gama completa de emociones y experiencias.', 10, 10, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloYIPIYOU.png', '', 9),
-(6, 'El Madrileño', 'Generando un revuelo popular como no se había visto en los últimos tiempos en nuestro país con el lanzamiento de ningún disco, el poder transformador de Puchito empieza en sí mismo y ha alcanzado, esta vez, a toda España.\r\nDe todos los giros en la carrera de C. Tangana, este era el más arriesgado y, de momento, el que mejor le está saliendo. Las grandes obras (artísticas y no) de la historia tienen todas algo en común: saben leer el mundo en el que son concebidas para transformarlo.', 10, 20, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloElMadrileño.png', '', 5),
-(7, 'Maracucho Bueno Muere Chiquito', 'Un proyecto en el que todos los aspectos (producciones, letras, marketing, videoclips y hasta el orden de las canciones) están cuidados al detalle para que entendamos mejor a los dos Cruzzi (la persona y el artista). A través de los 15 cortes el de Tacoronte demuestra su versatilidad al ofrecer un amplio abanico de estilos y de géneros, pasando por el reggaeton y el dancehall en Coquito la pieza o el sonido clásico West Coast en temas como Chivatos, canción en la que Cruz Cafuné se confirma como un gran habilidoso del storytelling y cuenta con uno de los mejores estribillos de los últimos tiempos.', 12, 20, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMaracuchoBueno.png', '', 3),
-(9, 'MMCD', 'Asentado en el top 3 de Discos en España un mes después de su lanzamiento, ‘Me muevo con Dios’ suena como el disco definitivo de Cruz Cafuné. Del R&B al rap, pasando por el reggaeton y el tecnho, ‘Me muevo con Dios’ es una ambiciosa obra de 23 pistas y más de 1 hora de duración, en la que junto a productores como Lex Luthorz, el canario encuentra un enfoque único y personal a la hora de hacer canciones. Una de sus grandes bazas a la hora de desgranar un imaginario donde la noche, el lujo bien entendido, las drogas y la velocidad, son igual de importantes que la autenticidad, Dios, la familia o los valores.', 20, 50, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMMCD.png', '', 3),
-(16, 'Luces Fuera', 'El rapero sevillano, después de mantenerse durante más de dos décadas como uno de los pilares que sujetaba el panorama del hip-hop español, decide poner punto y final a su carrera con ”Luces Fuera”, un álbum lleno de colaboraciones con viejos amigos y también con algunas nuevas promesas, pero sobre todo con la esencia del clásico e inigualable Toteking.', 40, 100, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloLucesFuera.png', 'https://open.spotify.com/intl-es/album/4ZdVjircdr00BoV0XoYgh9?si=9cc4f08e0914496c', 1),
-(17, 'Inkebrantable', 'Es la referencia que marca un nuevo inicio para SFDK, que se han cansado de lo fácil y buscan tender puentes entre otros géneros. Han invitado a compañeros de profesión como Lia Kali, Kase.O, Bejo, Natos y Waor, Sara Socas o Juanito Makandé. También reciben de nuevo, y por partida doble, la participación de un Kaze que brilló con «Agua Pasá» en su anterior trabajo.', 25, 60, '../../Mi-Proyecto/Imagenes/BD/ViniloInkebrantable.png', '', 6),
-(19, 'Tirititando', 'El nuevo largo de Fernando es un sólido álbum, donde el Ibicenco prueba con nuevos ritmos y sigue en forma en cuanto a barras se refiere. Este disco confirma a Fernando como uno de los exponentes más importantes del rap patrio en la actualidad. ', 25, 80, '../../Mi-Proyecto/Imagenes/BD/ViniloTiritirando.png', '', 9),
-(20, 'Moonlight922', 'Cruz Cafuné brilla más en libertad, y las producciones de la mixtape (hermanas de las del “Bruno” de Choclock, artífice junto a KIDDO, Dano y Lex Luthorz, entre otros, del sonido de \"Moonlight922\") respiran y dejan el espacio necesario para que el canario desborde y se confirme, a nivel de fraseo, manejo de códigos, lírica, versatilidad y storytelling, como uno de los mejores de su generación.', 15, 30, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMoonlight.png', '', 3);
+(1, 'BBO', 'El esperado álbum debut del talentoso rapero Hoke, que ha estado ganando reconocimiento en la escena underground con su estilo fresco y líricas impactantes. \r\nSi este álbum resulta tan especial no es solo por el salto a nivel musical que supone respecto de otras referencias de un género que peca demasiado de ombliguismo y falta de evolución; sino por revivir el espíritu de un rap clásico \"underground\" donde, desde hace tiempo, la originalidad estaba reñida con la autenticidad.', 20, 30, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloBBO.png', 'spotify:album:0ofRuEkUDbOtzmxqeZs8Pw', 4),
+(2, 'Brown Boy', 'Un disco que gana con cada escucha, y su profundidad es de esas en las que no haces pie ni aunque quieras. El ruido a su alrededor le habrá puesto en el punto de mira, pero Abhir quiere ser el ojo del huracán, y eso no hay quien lo pueda crear salvo él mismo.', 12, 20, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloBrownBoy.png', 'spotify:album:7uUv4tpHPGzcw8NDv5H7Yx', 7),
+(3, 'Heroe', 'Una década después del primer trabajo conjunto mano a mano de Toteking & Shotta titulado “Tu madre es una foca”, los hermanos sevillanos vuelven a reunirse para entregar un nuevo álbum hasta arriba de cabreo, hostias y crítica social a borbotones. “Héroe” es una pieza exhaustiva de compromiso lírico sin precedentes, pues tal y como reza en el interior del disco por recuerdo del Nobel de Literatura de 1915 Romain Rolland: “un héroe es todo aquel que hace lo que puede”.', 8, 10, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloHeroe.png', 'spotify:album:3pbWxKnA1OPy3OYvgsG5qQ', 1),
+(4, 'Nombre Direccion', 'Este nuevo trabajo marca un hito en la carrera del artista, introduciendo elementos electrónicos y percusiones inusuales en el mundo del rap, creando así una experiencia sonora única que ya ha sido catalogada como uno de los discos del año. El artista, conocido por su estilo inconfundible y líricas impactantes, decidió dar un giro radical en su música. Con más de 200 canciones previas en su haber, Kaze buscaba reinventarse y sorprenderse a sí mismo.', 18, 40, '../../Mi-Proyecto/Imagenes/BD/ViniloNombreDireccion.png', 'spotify:album:1JjX0ZugqeC1QXPLqSi1pu', 8),
+(5, 'YIPIYOU', 'Un álbum que destaca por su frescura y originalidad en la escena del rap en español. Costa presenta un trabajo enérgico y lleno de personalidad, donde fusiona habilidades líricas con una producción musical vibrante y variada.\r\n\r\nUna de las fortalezas de \"Yipiyou\" radica en la versatilidad de Costa como artista. Desde pistas con ritmos contagiosos que invitan al movimiento hasta canciones más introspectivas que exploran temas profundos y personales, el álbum ofrece una gama completa de emociones y experiencias.', 10, 10, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloYIPIYOU.png', 'spotify:album:0QlYj53TIFDRDq6E7GrRXH', 9),
+(6, 'El Madrileño', 'Generando un revuelo popular como no se había visto en los últimos tiempos en nuestro país con el lanzamiento de ningún disco, el poder transformador de Puchito empieza en sí mismo y ha alcanzado, esta vez, a toda España.\r\nDe todos los giros en la carrera de C. Tangana, este era el más arriesgado y, de momento, el que mejor le está saliendo. Las grandes obras (artísticas y no) de la historia tienen todas algo en común: saben leer el mundo en el que son concebidas para transformarlo.', 10, 20, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloElMadrileño.png', 'spotify:album:52QyC9nSbgtHFXyQRHsXJ9', 5),
+(7, 'Maracucho Bueno Muere Chiquito', 'Un proyecto en el que todos los aspectos (producciones, letras, marketing, videoclips y hasta el orden de las canciones) están cuidados al detalle para que entendamos mejor a los dos Cruzzi (la persona y el artista). A través de los 15 cortes el de Tacoronte demuestra su versatilidad al ofrecer un amplio abanico de estilos y de géneros, pasando por el reggaeton y el dancehall en Coquito la pieza o el sonido clásico West Coast en temas como Chivatos, canción en la que Cruz Cafuné se confirma como un gran habilidoso del storytelling y cuenta con uno de los mejores estribillos de los últimos tiempos.', 12, 20, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMaracuchoBueno.png', 'spotify:album:7dThD0ZbftpiMw5kChXpC5', 3),
+(9, 'MMCD', 'Asentado en el top 3 de Discos en España un mes después de su lanzamiento, ‘Me muevo con Dios’ suena como el disco definitivo de Cruz Cafuné. Del R&B al rap, pasando por el reggaeton y el tecnho, es una ambiciosa obra de 23 pistas y más de 1 hora de duración, en la que junto a productores como Lex Luthorz, el canario encuentra un enfoque único y personal a la hora de hacer canciones. Una de sus grandes bazas a la hora de desgranar un imaginario donde la noche y el lujo bien entendido son igual de importantes que la autenticidad, Dios, la familia o los valores.', 20, 50, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMMCD.png', 'spotify:album:7yvmtCjHcBe9DqIVl7AwQT', 3),
+(16, 'Luces Fuera', 'El rapero sevillano, después de mantenerse durante más de dos décadas como uno de los pilares que sujetaba el panorama del hip-hop español, decide poner punto y final a su carrera con ”Luces Fuera”, un álbum lleno de colaboraciones con viejos amigos y también con algunas nuevas promesas, pero sobre todo con la esencia del clásico e inigualable Toteking.', 40, 100, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloLucesFuera.png', 'spotify:album:4ZdVjircdr00BoV0XoYgh9', 1),
+(17, 'Inkebrantable', 'Es la referencia que marca un nuevo inicio para SFDK, que se han cansado de lo fácil y buscan tender puentes entre otros géneros. Han invitado a compañeros de profesión como Lia Kali, Kase.O, Bejo, Natos y Waor, Sara Socas o Juanito Makandé. También reciben de nuevo, y por partida doble, la participación de un Kaze que brilló con «Agua Pasá» en su anterior trabajo.', 25, 60, '../../Mi-Proyecto/Imagenes/BD/ViniloInkebrantable.png', 'spotify:album:2rWMEx26W79N05xBT5uEF4', 6),
+(19, 'Tirititando', 'El nuevo largo de Fernando es un sólido álbum, donde el Ibicenco prueba con nuevos ritmos y sigue en forma en cuanto a barras se refiere. Este disco confirma a Fernando como uno de los exponentes más importantes del rap patrio en la actualidad. ', 25, 80, '../../Mi-Proyecto/Imagenes/BD/ViniloTiritirando.png', 'spotify:album:6DfZ9xZKkGM2GmvSz2mIw3', 9),
+(20, 'Moonlight922', 'Cruz Cafuné brilla más en libertad, y las producciones de la mixtape (hermanas de las del “Bruno” de Choclock, artífice junto a KIDDO, Dano y Lex Luthorz, entre otros, del sonido de \"Moonlight922\") respiran y dejan el espacio necesario para que el canario desborde y se confirme, a nivel de fraseo, manejo de códigos, lírica, versatilidad y storytelling, como uno de los mejores de su generación.', 15, 30, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMoonlight.png', 'spotify:album:7z44Enk09spyCdKwxPJ5xG', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidos`
+-- Table structure for table `pedidos`
 --
 
 CREATE TABLE `pedidos` (
@@ -130,20 +130,7 @@ CREATE TABLE `pedidos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
---
-
-CREATE TABLE `productos` (
-  `ID` int(11) NOT NULL,
-  `Nombre` varchar(20) NOT NULL,
-  `Existencias` int(11) NOT NULL,
-  `Artista` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -156,7 +143,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido1`, `Apellido2`, `Correo`, `Contraseña`) VALUES
@@ -166,17 +153,17 @@ INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido1`, `Apellido2`, `Correo`, `Con
 (10, 'Alberto', 'Ruiz', 'Garcia', 'alber@gmail.com', '$2y$10$E0BqyphzLX8LgHESr1g7a./k7a200I5bi43hDlk1L6495vKoobJ5a');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `artistas`
+-- Indexes for table `artistas`
 --
 ALTER TABLE `artistas`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `carrito`
+-- Indexes for table `carrito`
 --
 ALTER TABLE `carrito`
   ADD PRIMARY KEY (`id_carrito`),
@@ -184,7 +171,7 @@ ALTER TABLE `carrito`
   ADD KEY `id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `detalles_pedidos`
+-- Indexes for table `detalles_pedidos`
 --
 ALTER TABLE `detalles_pedidos`
   ADD PRIMARY KEY (`id_detalle`),
@@ -192,104 +179,92 @@ ALTER TABLE `detalles_pedidos`
   ADD KEY `id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `discos`
+-- Indexes for table `discos`
 --
 ALTER TABLE `discos`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `FK_Artista_Disco_Cascade` (`ID_Artista`);
 
 --
--- Indices de la tabla `pedidos`
+-- Indexes for table `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id_pedido`),
   ADD KEY `id_cliente` (`id_usuario`);
 
 --
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `artistas`
+-- AUTO_INCREMENT for table `artistas`
 --
 ALTER TABLE `artistas`
   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `carrito`
+-- AUTO_INCREMENT for table `carrito`
 --
 ALTER TABLE `carrito`
   MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `detalles_pedidos`
+-- AUTO_INCREMENT for table `detalles_pedidos`
 --
 ALTER TABLE `detalles_pedidos`
   MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `discos`
+-- AUTO_INCREMENT for table `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT de la tabla `pedidos`
+-- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `carrito`
+-- Constraints for table `carrito`
 --
 ALTER TABLE `carrito`
   ADD CONSTRAINT `carrito_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`ID`),
   ADD CONSTRAINT `carrito_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `discos` (`ID`);
 
 --
--- Filtros para la tabla `detalles_pedidos`
+-- Constraints for table `detalles_pedidos`
 --
 ALTER TABLE `detalles_pedidos`
   ADD CONSTRAINT `detalles_pedidos_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`),
   ADD CONSTRAINT `detalles_pedidos_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `discos` (`ID`);
 
 --
--- Filtros para la tabla `discos`
+-- Constraints for table `discos`
 --
 ALTER TABLE `discos`
   ADD CONSTRAINT `FK_Artista_Disco` FOREIGN KEY (`ID_Artista`) REFERENCES `artistas` (`ID`),
   ADD CONSTRAINT `FK_Artista_Disco_Cascade` FOREIGN KEY (`ID_Artista`) REFERENCES `artistas` (`ID`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `pedidos`
+-- Constraints for table `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`ID`);

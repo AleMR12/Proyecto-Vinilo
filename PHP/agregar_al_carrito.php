@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_set_cookie_params(0); // La sesión expirará al cerrar el navegador
 
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];

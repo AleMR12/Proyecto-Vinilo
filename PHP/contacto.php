@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -26,16 +26,38 @@
         ?>
     </header>
 
-    <main>
+    <main id="main-container">
+        <!-- Contenedor para el formulario de contacto -->
+        <div id="contact-form-container">
+            <h2>Formulario de Contacto</h2>
+            <form id="contact-form" action="contacto_envio.php" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
         <!-- Contenedor para el mapa y la información -->
-        <div id="map-container">
+        <div id="map-info-container">
             <!-- Mapa -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.8323647478624!2d-4.42611632453851!3d36.72658707226817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7bc017dba91%3A0x42ebc77aa4a51db6!2sC.%20Oller%C3%ADas%2C%2077%2C%20Distrito%20Centro%2C%2029012%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1715547802387!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.8323647478624!2d-4.42611632453851!3d36.72658707226817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7bc017dba91%3A0x42ebc77aa4a51db6!2sC.%20Oller%C3%ADas%2C%2077%2C%20Distrito%20Centro%2C%2029012%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1715547802387!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
             <!-- Información de contacto -->
             <div id="info-section">
                 <h2>Datos de Contacto</h2>
-                <p>mundovinilo@mundovinilo.com</p>
+                <p>Email: mundovinilo@mundovinilo.com</p>
                 <p>Teléfono: +34 672 65 95 24</p>
             </div>
         </div>
