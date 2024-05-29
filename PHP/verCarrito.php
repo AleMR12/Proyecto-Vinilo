@@ -1,3 +1,29 @@
+<?php
+
+require('Header.php');
+require('conexionBDD.php');
+// Procesamiento de la actualización de la cantidad
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
+    // Verificar si se reciben los datos correctamente
+    // var_dump($_POST);
+
+    // Actualizar la cantidad en el carrito
+    if (isset($_POST['product_id']) && isset($_POST['new_quantity'])) {
+        $product_id = $_POST['product_id'];
+        $new_quantity = $_POST['new_quantity'];
+
+        // Actualizar la cantidad en el carrito
+        if (isset($_SESSION['cart'][$product_id])) {
+            $_SESSION['cart'][$product_id]['quantity'] = $new_quantity;
+        }
+    }
+
+    // Redirigir a la misma página para actualizar la vista
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,12 +35,13 @@
 
     <!-- Agregamos los archivos JS -->
     <script src="../JS/BarraNavegacionVertical.js"></script>
+
+    <!-- Añadimos los archivos CSS -->
+    <link rel="stylesheet" type="text/css" href="../CSS/MisPedidos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <?php require('Header.php'); ?>
-    </header>
 
     <main>
         <div class="container">
@@ -25,46 +52,75 @@
                         <tr>
                             <th>Producto</th>
                             <th>Precio</th>
-                            <th>Cantidad</th>
                             <th>Total</th>
+                            <th>Cantidad</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($_SESSION['cart'] as $product_id => $product) : ?>
-                            <tr>
+                            <tr class="product-row" data-product-id="<?= $product_id ?>">
                                 <td><?= htmlspecialchars($product['name']) ?></td>
-                                <td>$<?= number_format($product['price'], 2) ?></td>
-                                <td><?= $product['quantity'] ?></td>
-                                <td>$<?= number_format($product['price'] * $product['quantity'], 2) ?></td>
+                                <td>€<?= number_format($product['price'], 2) ?></td>
+                                <td>€<span class="product-total"><?= number_format($product['price'] * $product['quantity'], 2) ?></span></td>
                                 <td>
-                                    <form method="post" action="modificar_cantidad.php" class="quantity-form">
+                                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="quantity-form">
                                         <input type="hidden" name="product_id" value="<?= $product_id ?>">
                                         <input type="number" name="new_quantity" value="<?= $product['quantity'] ?>" min="1" class="quantity-input">
                                         <button type="submit" name="update_quantity" class="update-button">Modificar</button>
                                     </form>
-                                    <a href="eliminar_producto.php?product_id=<?= $product_id ?>" class="delete-link">Eliminar</a>
+                                </td>
+                                <td>
+                                    <a href="eliminar_producto.php?product_id=<?= $product_id ?>" class="delete-link">
+                                        <span class="material-icons">close</span>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+
                 <form method="post" action="vaciar_carrito.php" class="clear-cart-form">
                     <button type="submit" name="vaciar_carrito" class="clear-cart-button">Vaciar Carrito</button>
                 </form>
 
                 <div>
                     <form action="pasarela_pago.php" method="post">
-                        <input type="submit" value="Proceder al Pago">
+                        <input type="submit" value="Proceder al Pago" class="proceder-pago">
                     </form>
                 </div>
 
             <?php else : ?>
-                <div id="realizar-pedido-aqui" style="display: flex; justify-content: center; align-items: center; text-align: center;">
-                    <p style="margin: 0;">Puedes realizar tu primer pedido pinchando <span id="miEnlace" style="cursor: pointer; color: black; text-decoration: none; font-weight:bold;">aquí</span></p>
+                <div id="realizar-pedido-aqui" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <p style="margin: 0; font-size: 1.5em;">Tu carrito está vacío.</p>
+                </div>
+
+                <!-- Ejemplo de productos recomendados -->
+                <div class="recommended-products" style="margin-top: 50px;">
+                    <h2>Productos Recomendados</h2>
+                    <div class="products-list" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                        <!-- Ejemplo de producto recomendado -->
+                        <div class="product-item" style="padding: 10px; margin: 10px; text-align: center;">
+                            <img src="../Imagenes/Vinilos/ViniloLucesFuera.png" class="imagen-disco">
+                            <p>Luces Fuera</p>
+                            <p>40.00€</p>
+                        </div>
+                        <div class="product-item" style="padding: 10px; margin: 10px; text-align: center;">
+                            <img src="../Imagenes/Vinilos/ViniloMMCD.png" class="imagen-disco">
+                            <p>Me Muevo con Dios</p>
+                            <p>20.00€</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; align-items: flex-end;">
+                    <a href="<?php echo isset($_SESSION['usuario']) ? '../PHP/discos.php' : '../HTML/LogIn.html'; ?>" class="explore-button">
+                        Explorar Productos
+                    </a>
                 </div>
             <?php endif; ?>
         </div>
+
 
         <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->
         <ul>

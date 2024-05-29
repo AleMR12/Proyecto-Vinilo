@@ -11,6 +11,9 @@
 
     <!-- Agregamos los archivos JS -->
     <script src="../JS/BarraNavegacionVertical.js"></script>
+
+    <!-- Añadimos los archivos CSS -->
+    <link rel="stylesheet" href="../CSS/Conciertos.css">
 </head>
 
 <body>
@@ -23,10 +26,40 @@
     </header>
 
     <main>
-        <H1>AGREGAR COSAS</H1>
+        <main id="main-container">
+            <!-- Sección de Conciertos -->
+            <section id="concerts-section">
+                <h2>Próximos Conciertos</h2>
+                <hr class="custom-hr">
+                <div class="concert">
+                    <div class="concert-details">
+                        <h3>Concierto en Madrid</h3>
+                        <p><strong>Fecha:</strong> 15 de Junio, 2024</p>
+                        <p><strong>Lugar:</strong> Estadio Santiago Bernabéu, Madrid</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                    </div>
+                </div>
+                <div class="concert">
+                    <div class="concert-details">
+                        <h3>Concierto en Barcelona</h3>
+                        <p><strong>Fecha:</strong> 22 de Julio, 2024</p>
+                        <p><strong>Lugar:</strong> Palau Sant Jordi, Barcelona</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                    </div>
+                </div>
+                <div class="concert">
+                    <div class="concert-details">
+                        <h3>Concierto en Valencia</h3>
+                        <p><strong>Fecha:</strong> 5 de Agosto, 2024</p>
+                        <p><strong>Lugar:</strong> Ciudad de las Artes y las Ciencias, Valencia</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->
-    <ul>
+
+        <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->
+        <ul>
             <li id="Menu" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                         <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                     </svg></a></li>

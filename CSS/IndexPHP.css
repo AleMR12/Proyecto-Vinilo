@@ -78,17 +78,20 @@ a {
 
 .contenedor-discos {
     /* Ajustamos el tamaño del contenedor para dejar espacio para el iframe de Spotify */
-    width: calc(100% - 30rem); /* Restamos el ancho del iframe */
+    width: calc(100% - 30rem);
+    /* Restamos el ancho del iframe */
     margin-left: 3rem;
 }
 
 .botones {
     display: flex;
-    justify-content: flex-end; /* Alineamos los botones hacia la derecha */
+    justify-content: flex-end;
+    /* Alineamos los botones hacia la derecha */
 }
 
 .episodes {
-    margin-right: 1rem; /* Añadimos un margen entre el botón de Spotify y los demás botones */
+    margin-right: 1rem;
+    /* Añadimos un margen entre el botón de Spotify y los demás botones */
 }
 
 .contenedor-artistas {
@@ -106,7 +109,7 @@ a {
 }
 
 .imagen-disco,
-.imagen-artista {
+.imagen-artistas {
     width: 15rem;
     /* Ancho fijo para las imágenes */
     height: auto;
@@ -115,6 +118,38 @@ a {
     transition: transform 0.3s ease;
     /* Transición suave de 0.3 segundos para el efecto de zoom */
 
+}
+
+.imagen-artistas{
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    animation: shadowAnimationOut 0.3s;
+
+    
+}
+
+.imagen-artistas:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: shadowAnimation 0.3s;
+
+}
+
+@keyframes shadowAnimationOut {
+    from {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* Definir la animación de la sombra */
+@keyframes shadowAnimation {
+    from {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .imagen-disco:hover {
@@ -209,7 +244,7 @@ a {
     display: flex;
     float: right;
     transition: background-color 0.3s ease;
-    
+
 }
 
 .saber-mas:hover {
@@ -229,6 +264,7 @@ a {
     float: inline-end;
     transition: transform 0.2s ease-in-out;
     margin-right: 1rem;
+    color: black;
 }
 
 .carrito-btn:hover {
@@ -237,13 +273,16 @@ a {
 
 .desplazable {
     position: fixed;
-    top: 32%; /* Ajusta la posición inicial del div */
-    left: 72%; /* Centra horizontalmente el div */
-    transition: top 0.3s; /* Agrega una transición suave */
+    top: 32%;
+    /* Ajusta la posición inicial del div */
+    left: 72%;
+    /* Centra horizontalmente el div */
+    transition: top 0.3s;
+    /* Agrega una transición suave */
     width: fit-content;
 }
 
-.episode{
+.episode {
 
     background-color: transparent;
     border: none;
@@ -252,7 +291,7 @@ a {
 
 }
 
-.episode:hover{
+.episode:hover {
 
     transform: scale(1.2);
 
@@ -269,12 +308,12 @@ a {
         display: none;
     }
 
-    #miDiv{
+    #miDiv {
 
         display: none;
     }
 
-    .contenedor-discos{
+    .contenedor-discos {
 
         width: fit-content;
         margin-right: 3rem;
@@ -341,15 +380,6 @@ a {
     margin-bottom: 5px;
 }
 
-.imagen-artista {
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.752);
-}
-
-.imagen-artista:hover {
-    transform: scale(1.1);
-}
-
 .descripcion-artista {
     width: 75%;
     display: inline-block;
@@ -402,14 +432,6 @@ h1 {
     width: 50px;
 }
 
-.update-button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
 .delete-link {
     color: #f44336;
@@ -423,17 +445,3 @@ h1 {
     color: #888;
 }
 
-.clear-cart-button {
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-    float: right;
-}
-
-.clear-cart-button:hover {
-    background-color: #d32f2f;
-}

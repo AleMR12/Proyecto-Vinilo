@@ -61,6 +61,7 @@
 
         ?>
 
+
         <div>
             <div id="miDiv" class="desplazable">
                 <div id="embed-iframe">
@@ -95,7 +96,6 @@
 
             <!-- Le damos clase al div -->
             <div class="contenedor-discos">
-
 
                 <?php
                 // Verificar si se encontraron resultados
@@ -138,7 +138,6 @@
                         echo "</button>";
                         echo "</div>";
 
-
                         // Verificar si hay una sesión iniciada antes de mostrar el botón "Añadir al carrito"
                         if (isset($_SESSION['usuario'])) {
                             echo "<form method='post' action='agregar_al_carrito.php' class='agregar-carrito-form'>";
@@ -149,6 +148,11 @@
                             echo "<span class='material-symbols-outlined'>add_shopping_cart</span>";
                             echo "</button>";
                             echo "</form>";
+                        } else {
+                            // Mostrar el icono del carrito y redirigir a una página específica si no hay sesión iniciada
+                            echo "<a href='../HTML/LogIn.html' class='carrito-btn'>";
+                            echo "<span class='material-symbols-outlined'>add_shopping_cart</span>";
+                            echo "</a>";
                         }
                         echo "<a href='../PHP/Artistas.php' class='enlace-saber-mas'><button type='submit' name='saber_mas' class='saber-mas'>Saber más..</button></a>";
                         echo "</div>"; // Fin de div 'botones'
@@ -160,6 +164,7 @@
                 }
                 ?>
             </div>
+
 
         </div>
 
@@ -208,7 +213,5 @@
         ?>
     </footer>
 
-
 </body>
-
 </html>

@@ -1,0 +1,57 @@
+/* Estilos para la sección de conciertos */
+#concerts-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+#concerts-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: black;
+}
+
+#concerts-section .custom-hr {
+    width: 50%;
+    margin: 0.5rem auto 2rem auto;
+    border: 1px solid #ccc;
+}
+
+.concert {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease; /* Añade la transición aquí */
+}
+
+.concert:hover{
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.318);
+
+}
+
+.concert-details {
+    flex: 1;
+}
+
+
+
+.concert-details h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.concert-details p {
+    margin: 0.25rem 0;
+    color: #666;
+}
+
+.concert-details p strong {
+    color: #333;
+}

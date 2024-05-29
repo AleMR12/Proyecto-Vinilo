@@ -27,47 +27,56 @@
     </header>
 
     <main id="main-container">
-        <!-- Contenedor para el formulario de contacto -->
-        <div id="contact-form-container">
-            <h2>Formulario de Contacto</h2>
-            <form id="contact-form" action="contacto_envio.php" method="POST">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-
-        <!-- Contenedor para el mapa y la información -->
-        <div id="map-info-container">
-            <!-- Mapa -->
-            <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.8323647478624!2d-4.42611632453851!3d36.72658707226817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7bc017dba91%3A0x42ebc77aa4a51db6!2sC.%20Oller%C3%ADas%2C%2077%2C%20Distrito%20Centro%2C%2029012%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1715547802387!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Contenedor para los iconos de redes sociales -->
+        <div id="contact-content">
+            <!-- Mapa a la izquierda -->
+            <div id="map-container">
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.8323647478624!2d-4.42611632453851!3d36.72658707226817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7bc017dba91%3A0x42ebc77aa4a51db6!2sC.%20Oller%C3%ADas%2C%2077%2C%20Distrito%20Centro%2C%2029012%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1717017328264!5m2!1ses!2ses" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
 
-            <!-- Información de contacto -->
-            <div id="info-section">
-                <h2>Datos de Contacto</h2>
-                <p>Email: mundovinilo@mundovinilo.com</p>
-                <p>Teléfono: +34 672 65 95 24</p>
+            <!-- Contenedor para los datos de contacto y el formulario a la derecha -->
+            <div id="contact-info-form">
+                <!-- Datos de Contacto -->
+                <h2>Contáctanos</h2>
+                <div id="contact-info-container">
+                    <hr class="custom-hr">
+                    <div id="info-section">
+                        <p>Email: mundovinilo@mundovinilo.com</p>
+                        <p>Teléfono: +34 672 65 95 24</p><br>
+                    </div>
+                </div>
+
+                <!-- Formulario de Contacto -->
+                <div id="contact-form-container">
+                    <h2>Formulario de Contacto</h2>
+                    <hr class="custom-hr">
+                    <form id="contact-form" action="contacto_envio.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" pattern="[67][0-9]{8}" maxlength="9" title="El teléfono debe contener 9 dígitos numéricos y comenzar con 6 o 7" required>
+                            </div>
+                        </div>
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <footer>
-        <?php
-        require('footer.php');
-        ?>
-    </footer>
+
+
+
 
     <!-- Chat de soporte -->
     <div id="chat-container" class="minimized">
@@ -121,6 +130,13 @@
             </ul>
         </nav>
     </div>
+
+    <footer>
+        <?php
+        require('footer.php');
+        ?>
+    </footer>
+
     <script>
         // Función para alternar la visibilidad del chat
         function toggleChat() {

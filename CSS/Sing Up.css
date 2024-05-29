@@ -1,10 +1,3 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-}
-
 #video-background {
     position: fixed;
     top: 50%;
@@ -93,10 +86,11 @@ input:focus ~ label, input:valid ~ label {
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    top: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.input[type="password"]::placeholder{
+.input[type="password"]::placeholder {
     color: white;
 }
 
@@ -111,10 +105,10 @@ button {
     font-size: 1em;
     font-weight: 700;
     transition: ease-in-out .2s;
+    margin-top: 1rem; /* Añadido margen superior */
 }
 
-button:hover{
-
+button:hover {
     background-color: rgb(184, 184, 184);
 }
 

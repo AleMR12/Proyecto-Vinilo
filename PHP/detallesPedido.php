@@ -15,9 +15,76 @@
 
     <!-- Agregamos los archivo JS -->
     <script src="../JS/BarraNavegacionVertical.js"></script>
+    <style>
+        .total-pedido-contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-pedido {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .volver {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #b83030;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .volver:hover {
+            background-color: #a12828;
+        }
+
+        .volver:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(184, 48, 48, 0.3);
+        }
+
+
+        .detalle-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            font-size: .9rem;
+        }
+
+        .detalle-info {
+            flex-grow: 2;
+            min-width: 15rem;
+        }
+
+        .detalle-info p {
+            margin-bottom: .8rem;
+        }
+
+        .detalle-info p strong {
+            color: #000000;
+        }
+
+        .descripcion-info {
+            flex-grow: 1;
+        }
+
+        .descripcion-info p {
+            margin-bottom: 0.5em;
+            margin-left: .5rem;
+        }
+
+        /* Otros estilos existentes */
+    </style>
+
 </head>
 
 <body>
+
+
     <!-- Header de la página -->
     <header>
         <?php require('Header.php'); ?>
@@ -25,19 +92,20 @@
 
     <!-- Cuerpo de la página -->
     <main>
+        <div class="contenedor-exterior">
         <h1 class="titulo">Detalles del Pedido</h1>
+            <div class="contenedor-detalles-pedido">
+            
+                <?php
+                // Incluir el archivo de conexión a la base de datos
+                include("conexionBDD.php");
 
-        <div class="contenedor-detalles-pedido">
-            <?php
-            // Incluir el archivo de conexión a la base de datos
-            include("conexionBDD.php");
+                // Obtener el ID del pedido desde la solicitud GET
+                $idPedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
 
-            // Obtener el ID del pedido desde la solicitud GET
-            $idPedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
-
-            if ($idPedido > 0) {
-                // Consulta SQL ajustada
-                $query = "
+                if ($idPedido > 0) {
+                    // Consulta SQL ajustada
+                    $query = "
                 SELECT 
                     dp.id_pedido,
                     dp.cantidad,
@@ -58,59 +126,63 @@
                     dp.id_pedido = ?
                 ";
 
-                // Preparar y ejecutar la consulta
-                if ($stmt = $conexion->prepare($query)) {
-                    $stmt->bind_param("i", $idPedido);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
+                    // Preparar y ejecutar la consulta
+                    if ($stmt = $conexion->prepare($query)) {
+                        $stmt->bind_param("i", $idPedido);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
 
-                    // Inicializar la variable para el total del precio del pedido
-                    $totalPedido = 0;
+                        // Inicializar la variable para el total del precio del pedido
+                        $totalPedido = 0;
 
-                    // Verificar si se encontraron registros
-                    if ($result->num_rows > 0) {
-                        // Mostrar los detalles del pedido
-                        while ($row = $result->fetch_assoc()) {
-                            $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
-                            echo "<div class='detalle-item'>";
-                            echo "<img src='" . $ruta_relativa . "' alt='" . $row['nombre_disco'] . "' class='imagen-disco'>";
-                            echo "<div class='detalle-info'>";
-                            echo "<p><strong>Nombre del Disco:</strong> " . $row['nombre_disco'] . "</p>";
-                            echo "<p><strong>Precio:</strong> " . $row['precio_disco'] . "€</p>";
-                            echo "<p><strong>Cantidad:</strong> " . $row['cantidad'] . "</p>";
-                            echo "<p><strong>Nombre del Artista:</strong> " . $row['nombre_artista'] . "</p>";
-                            echo "<p><strong>Fecha de entrega: </strong>" . $row['fecha_entrega'] . "</p>";
-                            echo "</div>";
-                            echo "<div class='descripcion-info'>";
-                            echo "<p><strong>Descripción:</strong> " . $row['descripcion_disco'] . "</p>";
-                            echo "<a href='discos.php?id=" . $row['ID'] . "' class='ver-disco'>Ver Disco</a>";
-                            echo "</div>";
-                            echo "</div>";
+                        // Verificar si se encontraron registros
+                        if ($result->num_rows > 0) {
+                            // Mostrar los detalles del pedido
+                            while ($row = $result->fetch_assoc()) {
+                                $ruta_relativa = str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['Foto']);
+                                echo "<div class='detalle-item'>";
+                                echo "<img src='" . $ruta_relativa . "' alt='" . $row['nombre_disco'] . "' class='imagen-disco'>";
+                                echo "<div class='detalle-info'>";
+                                echo "<p><strong>Nombre del Disco:</strong> " . $row['nombre_disco'] . "</p>";
+                                echo "<p><strong>Precio:</strong> " . $row['precio_disco'] . "€</p>";
+                                echo "<p><strong>Cantidad:</strong> " . $row['cantidad'] . "</p>";
+                                echo "<p><strong>Nombre del Artista:</strong> " . $row['nombre_artista'] . "</p>";
+                                echo "<p><strong>Fecha de entrega: </strong>" . $row['fecha_entrega'] . "</p>";
+                                echo "</div>";
+                                echo "<div class='descripcion-info'>";
+                                echo "<p><strong>Descripción:</strong> " . $row['descripcion_disco'] . "</p>";
+                                echo "</div>";
+                                echo "</div>";
 
-                            // Sumar al total del pedido
-                            $totalPedido += $row['total_precio'];
+                                // Sumar al total del pedido
+                                $totalPedido += $row['total_precio'];
+                            }
+
+                            // Contenedor para el botón y el total del pedido
+                            echo "<div class='total-pedido-contenedor'>";
+                            // Botón de volver
+                            echo "<a href='../PHP/verPedidos.php' class='volver'>Volver</a>";
+                            // Total del pedido
+                            echo "<div class='total-pedido'>";
+                            echo "<p><strong>Total del Pedido:</strong> " . $totalPedido . "€</p>";
+                            echo "</div>";
+                            echo "</div>";
+                        } else {
+                            echo "No se encontraron detalles para este pedido.";
                         }
-
-                        // Mostrar el total del pedido
-                        echo "<div class='total-pedido'>";
-                        echo "<p><strong>Total del Pedido:</strong> " . $totalPedido . "€</p>";
-                        echo "</div>";
+                        // Cerrar la declaración
+                        $stmt->close();
                     } else {
-                        echo "No se encontraron detalles para este pedido.";
+                        echo "Error en la consulta: " . $conexion->error;
                     }
 
-                    // Cerrar la declaración
-                    $stmt->close();
+                    // Cerrar la conexión
+                    $conexion->close();
                 } else {
-                    echo "Error en la consulta: " . $conexion->error;
+                    echo "ID de pedido inválido.";
                 }
-
-                // Cerrar la conexión
-                $conexion->close();
-            } else {
-                echo "ID de pedido inválido.";
-            }
-            ?>
+                ?>
+            </div>
         </div>
 
         <!-- Aplicamos la función de clicado para abrir la barra de navegación vertical -->

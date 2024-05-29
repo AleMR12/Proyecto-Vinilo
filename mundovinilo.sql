@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2024 at 08:43 AM
+-- Generation Time: May 28, 2024 at 11:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,6 +34,7 @@ CREATE TABLE `artistas` (
   `Apellido1` varchar(20) NOT NULL,
   `Apellido2` varchar(20) NOT NULL,
   `Descripción` varchar(2000) NOT NULL,
+  `FechaNacimiento` date DEFAULT NULL,
   `Foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,16 +42,16 @@ CREATE TABLE `artistas` (
 -- Dumping data for table `artistas`
 --
 
-INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apellido2`, `Descripción`, `Foto`) VALUES
-(1, 'Tote King', 'Manuel', 'González', 'Rodríguez', 'Conocido artísticamente como Tote King, es un rapero español nacido el 13 de diciembre de 1978 en Sevilla. Es uno de los referentes más destacados del rap en España y ha dejado una huella significativa en la escena musical del país.', '../../Mi-Proyecto/Imagenes/BD/Tote.jpg'),
-(3, 'Cruz Cafuné', 'Carlos', 'Bruñas', 'Zamorín', 'El talentoso rapero originario de las Islas Canarias, destaca por su estilo fresco y auténtico. Con letras que exploran la vida urbana y la juventud, su música fusiona el rap con influencias de R&B y reggae, creando un sonido único y atrapante. Con un enfoque genuino y letras reflexivas, Cruz Cafuné cautiva a su audiencia con su autenticidad y pasión por la música.', '../../Mi-Proyecto/Imagenes/BD/Cruzzi.jpg'),
-(4, 'Hoke', ' Héctor', ' ', ' ', '', '../../Mi-Proyecto/Imagenes/BD/Hoke.jpg'),
-(5, 'C. Tangana', 'Antón', 'Álvarez', 'Alfaro', '', '../../Mi-Proyecto/Imagenes/BD/CTangana.jpg'),
-(6, 'SFDK', 'Saturnino ', 'Rey', 'García', 'SFDK, acrónimo de \"Siempre Fuertes De Conciencia\", es un dúo de rap formado en Sevilla, España, en 1993 por Zatu y Acción Sánchez. Han sido pioneros del rap en español y han dejado una marca indeleble en la escena hip-hop de habla hispana con su estilo único y letras profundas.', '../../Mi-Proyecto/Imagenes/BD/SFDK.jpg'),
-(7, 'Abhir ', 'Abhir ', 'Hathiramani', ' ', '', '../../Mi-Proyecto/Imagenes/BD/Abhir.jpg'),
-(8, 'Kaze', 'Cristian ', 'Carrión', ' Chacón', '', '../../Mi-Proyecto/Imagenes/BD/Kaze.jpg'),
-(9, 'Fernando Costa', 'Fernando ', 'Costa ', 'Morales', '', '../../Mi-Proyecto/Imagenes/BD/Fernandito.jpg'),
-(10, 'Kase O', 'Javier ', 'Ibarra ', 'Ramos', '', '../../Mi-Proyecto/Imagenes/BD/kase.jpg');
+INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apellido2`, `Descripción`, `FechaNacimiento`, `Foto`) VALUES
+(1, 'Tote King', 'Manuel', 'González', 'Rodríguez', 'Conocido artísticamente como Tote King, es un rapero español nacido el 13 de diciembre de 1978 en Sevilla. Es uno de los referentes más destacados del rap en España y ha dejado una huella significativa en la escena musical del país.', NULL, '../../Mi-Proyecto/Imagenes/BD/Tote.jpg'),
+(3, 'Cruz Cafuné', 'Carlos', 'Bruñas', 'Zamorín', 'El talentoso rapero originario de las Islas Canarias, destaca por su estilo fresco y auténtico. Con letras que exploran la vida urbana y la juventud, su música fusiona el rap con influencias de R&B y reggae, creando un sonido único y atrapante. Con un enfoque genuino y letras reflexivas, Cruz Cafuné cautiva a su audiencia con su autenticidad y pasión por la música.', NULL, '../../Mi-Proyecto/Imagenes/BD/Cruzzi.jpg'),
+(4, 'Hoke', ' Héctor', ' ', ' ', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Hoke.jpg'),
+(5, 'C. Tangana', 'Antón', 'Álvarez', 'Alfaro', '', NULL, '../../Mi-Proyecto/Imagenes/BD/CTangana.jpg'),
+(6, 'SFDK', 'Saturnino ', 'Rey', 'García', 'SFDK, acrónimo de \"Siempre Fuertes De Conciencia\", es un dúo de rap formado en Sevilla, España, en 1993 por Zatu y Acción Sánchez. Han sido pioneros del rap en español y han dejado una marca indeleble en la escena hip-hop de habla hispana con su estilo único y letras profundas.', NULL, '../../Mi-Proyecto/Imagenes/BD/SFDK.jpg'),
+(7, 'Abhir ', 'Abhir ', 'Hathiramani', ' ', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Abhir.jpg'),
+(8, 'Kaze', 'Cristian ', 'Carrión', ' Chacón', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Kaze.jpg'),
+(9, 'Fernando Costa', 'Fernando ', 'Costa ', 'Morales', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Fernandito.jpg'),
+(10, 'Kase O', 'Javier ', 'Ibarra ', 'Ramos', '', NULL, '../../Mi-Proyecto/Imagenes/BD/kase.jpg');
 
 -- --------------------------------------------------------
 
@@ -72,11 +73,27 @@ CREATE TABLE `carrito` (
 --
 
 CREATE TABLE `detalles_pedidos` (
-  `id_detalle` int(11) NOT NULL,
   `id_pedido` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL
+  `cantidad` int(11) NOT NULL,
+  `precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `detalles_pedidos`
+--
+
+INSERT INTO `detalles_pedidos` (`id_pedido`, `ID`, `id_producto`, `cantidad`, `precio`) VALUES
+(3, 4, 1, 1, 20),
+(3, 5, 16, 1, 40),
+(4, 6, 1, 1, 20),
+(4, 7, 4, 1, 18),
+(5, 8, 7, 1, 12),
+(5, 9, 20, 2, 15),
+(6, 10, 1, 1, 20),
+(6, 11, 3, 1, 8),
+(7, 12, 1, 2, 20);
 
 -- --------------------------------------------------------
 
@@ -127,6 +144,17 @@ CREATE TABLE `pedidos` (
   `total` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedido`, `id_usuario`, `fecha`, `estado`, `total`) VALUES
+(3, 2, '2024-05-15 08:53:50', 'Pagado', 60.00),
+(4, 2, '2024-05-15 08:55:30', 'Pagado', 38.00),
+(5, 2, '2024-05-16 07:57:44', 'Pagado', 42.00),
+(6, 3, '2024-05-16 08:04:35', 'Pagado', 28.00),
+(7, 2, '2024-05-18 18:59:54', 'Pagado', 40.00);
+
 -- --------------------------------------------------------
 
 --
@@ -148,9 +176,10 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido1`, `Apellido2`, `Correo`, `Contraseña`) VALUES
 (1, 'root', '', '', 'root@mundovinilo.com', '$2y$10$5bw6bwXoYHPCe'),
-(7, 'Ana', 'fillol', 'florencia', 'aana@pepon.com', '$2y$10$yA9BIwRCAA9n9YuI7i4/bO05TQi8DcXiqpe/VO8kvdXQwy/68llau'),
-(9, 'Ale', 'Martin', 'Rodriguez', 'alee@gmail.com', '$2y$10$HMTQxqAYbaL8QHnUbICHC.h4yg.VZ3Zoo1H4TL60XacXUE6phIPWO'),
-(10, 'Alberto', 'Ruiz', 'Garcia', 'alber@gmail.com', '$2y$10$E0BqyphzLX8LgHESr1g7a./k7a200I5bi43hDlk1L6495vKoobJ5a');
+(2, 'Alejandro', 'Martín', 'Rodríguez', 'Alejandro12@gmail.com', '$2y$10$fAUliCi.VZPYd/WK8U.BCepOCHumGdTMMpmh9RBWDtrvFT5nW79pe'),
+(3, 'Javier', 'Martin', 'Rodriguez', 'Javi10@gmail.com', '$2y$10$LZxnVrHHHerAcDjeyg8TE.M8a95NxInYNsKohQZEfHfgn1XiWgulS'),
+(4, 'Teresa', 'Rodriguez', 'Garrido', 'tere12@gmail.com', '$2y$10$wb5gktiWlssTgd6s6zvv..Y9rnyPnjCRJeA3KpyJ70xXnn3U2J9oC'),
+(5, 'Ricardo', 'Gironda', 'Cuéllar', 'Richi20@gmail.com', '$2y$10$BD6l4JJFcqRZqPbKSf.uo.Qp7VioG.ZZtg6JVNclbNEvKBSDBxg9u');
 
 --
 -- Indexes for dumped tables
@@ -174,7 +203,7 @@ ALTER TABLE `carrito`
 -- Indexes for table `detalles_pedidos`
 --
 ALTER TABLE `detalles_pedidos`
-  ADD PRIMARY KEY (`id_detalle`),
+  ADD PRIMARY KEY (`ID`),
   ADD KEY `id_pedido` (`id_pedido`),
   ADD KEY `id_producto` (`id_producto`);
 
@@ -218,25 +247,25 @@ ALTER TABLE `carrito`
 -- AUTO_INCREMENT for table `detalles_pedidos`
 --
 ALTER TABLE `detalles_pedidos`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

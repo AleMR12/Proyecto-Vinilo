@@ -1,24 +1,17 @@
 /* Estilos para el mapa */
 #map-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: auto;
     margin-top: 2rem;
-    margin-left: 2rem;
 }
 
 #map {
-    width: 100%;
-    height: 300px;
-    border: 0;
-    flex: 1;
+    border: 1px solid rgba(84, 84, 84, 0.651);
+    height: fit-content;
 }
 
 /* Estilos para la sección de información */
 #info-section {
-    flex: 1;
-    padding: 20px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,6 +19,7 @@
 
 #info-section h2 {
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 #info-section p {
@@ -33,14 +27,6 @@
 }
 
 /* Estilos para el formulario */
-#form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
-
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -48,7 +34,8 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 70%;
+    margin-top: 2rem;
 }
 
 #contact-form input,
@@ -74,19 +61,76 @@
     background-color: #a12828;
 }
 
+#contact-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -1rem;
+}
+
+#contact-form-container label {
+    margin-bottom: .5rem;
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem; /* Añade un espacio entre los campos */
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.custom-hr {
+    width: 50%; /* Ajusta el ancho al 50% del contenedor */
+    margin: 0 auto; /* Centra la línea horizontal */
+    border: 1px solid #ccc; /* Opcional: ajusta el estilo del borde */
+}
+
 /* Estilos para el contenedor general */
 #main-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column;
+    padding-left: 2rem;
 }
 
-#side-content {
+#contact-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#contact-info-form {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 45%;
-    margin-left: 2rem;
+}
+
+#contact-info-form h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contact-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#social-media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 /* Estilos para el chat de soporte */
@@ -196,4 +240,14 @@
 #messages-container::-webkit-scrollbar-thumb {
     background-color: #a1a0a0;
     border-radius: 4px;
+}
+
+#message {
+    resize: none;
+}
+
+.formulario-centro {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }

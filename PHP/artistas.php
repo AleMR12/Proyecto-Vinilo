@@ -56,7 +56,7 @@
             ?>
                     <!-- Contenedor del artista -->
                     <div class="artista <?php echo $es_ultimo; ?>">
-                        <img src="<?php echo $ruta_relativa; ?>" alt="<?php echo $row['Nombre_Artistico']; ?>" class="imagen-artista">
+                        <img src="<?php echo $ruta_relativa; ?>" alt="<?php echo $row['Nombre_Artistico']; ?>" class="imagen-artistas">
                         <div class="info-artista">
                             <!-- Modificamos el enlace del nombre del artista para incluir el nombre como parámetro en la URL -->
                             <h2 class="nombre-artista"><a href="../PHP/discos.php?artista=<?php echo urlencode($row['Nombre_Artistico']); ?>" class="enlace-artistas-discos"><?php echo $row['Nombre_Artistico']; ?></a></h2>
@@ -118,6 +118,21 @@
         <?php require('footer.php'); ?>
     </footer>
 
+    <script>
+        const images = document.querySelectorAll('.imagen-artistas');
+
+        images.forEach(image => {
+            // Agregar un evento de mouseover para cambiar la sombra al pasar el ratón por encima
+            image.addEventListener('mouseover', function() {
+                image.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.5)';
+            });
+
+            // Agregar un evento de mouseout para cambiar la sombra al retirar el ratón
+            image.addEventListener('mouseout', function() {
+                image.style.boxShadow = '0 0 0 rgba(0, 0, 0, 0)';
+            });
+        });
+    </script>
 </body>
 
 </html>

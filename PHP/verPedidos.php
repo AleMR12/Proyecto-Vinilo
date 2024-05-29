@@ -45,7 +45,7 @@
                         echo "<p><strong>ID del Pedido:</strong> " . $row['id_pedido'] . "</p>";
                         echo "<p><strong>Fecha del Pedido:</strong> " . $row['fecha'] . "</p>";
                         echo "<p><strong>Estado:</strong> " . $row['estado'] . "</p>";
-                        echo "<p><strong>Total:</strong> $" . $row['total'] . "</p>";
+                        echo "<p><strong>Total:</strong> €" . $row['total'] . "</p>";
                         echo "<form action='../PHP/detallesPedido.php' method='GET'>";
                         echo "<input type='hidden' name='id_pedido' value='" . $row['id_pedido'] . "'>";
                         echo "<button type='submit' class='boton-detalles'>Ver Detalles</button>";
