@@ -20,7 +20,15 @@ body {
     background-color: rgba(35, 35, 35, 0.674); /* Negro claro con opacidad */
     padding: 40px; /* Aumentar el espacio interno */
     border-radius: 10px; /* Hacer los bordes más redondeados */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Aumentar la profundidad de la sombra */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.26); /* Aumentar la profundidad de la sombra */
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.container:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.674); /* Aumentar la profundidad de la sombra */
+
+
 }
 
 #logo {
@@ -28,7 +36,7 @@ body {
     top: 10px;
     left: 10px;
     width: 8rem; /* Ajusta el tamaño según sea necesario */
-    height: auto; /* Para mantener la proporción de la imagen */
+    height: auto; /* Para mantener la proporción de la imagen */    
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     z-index: 1000; /* Asegura que el logo esté sobre el contenido */
 }
@@ -64,13 +72,11 @@ input[type="email"] {
     transition: border-color 1s ease; /* Transición suave para el color del borde */
 }
 
-input[type="email"]:focus {
-    border-color: #ff6600; /* Cambiar el color del borde cuando se enfoca */
-}
+
 
 
 button {
-    background-color: #ff6600;
+    background-color: #b83030;
     color: #ffffff;
     border: none;
     padding: 12px 24px; /* Aumentar el espacio interno */
@@ -80,9 +86,6 @@ button {
 }
 
 button:hover {
-    background-color: #e65c00;
+    background-color: #a12828;
 }
 
-button:active {
-    background-color: #cc5200;
-}

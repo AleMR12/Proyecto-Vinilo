@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const scrollerInner = scroller.querySelector(".lista-horizontal");
             const scrollerContent = Array.from(scrollerInner.children);
 
-            scrollerContent.forEach(item => {
-                const duplicatedItem = item.cloneNode(true);
-                duplicatedItem.setAttribute("aria-hidden", true);
-                scrollerInner.prepend(duplicatedItem); // Cambia appendChild por prepend para agregar elementos al principio
-            });
+            // Mueve el último elemento antes del primer elemento
+            const lastItem = scrollerInner.lastElementChild;
+            const firstItem = scrollerInner.firstElementChild;
+            scrollerInner.insertBefore(firstItem, lastItem);
         });
     }
+
 });
