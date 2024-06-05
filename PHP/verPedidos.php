@@ -15,6 +15,12 @@
 
     <!-- Agregamos los archivos JS -->
     <script src="../JS/BarraNavegacionVertical.js"></script>
+
+    <style>
+        .aqui-enlace{
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,7 +60,7 @@
                     }
                 } else {
                     echo "<div class='realizar-pedidos'>";
-                    echo "<p>Puedes realizar tu primer pedido pinchando <strong><a href='../PHP/Discos.php'>aquí</a></strong></p>";
+                    echo "<p>Puedes realizar tu primer pedido pinchando <strong><a href='../PHP/Discos.php' class='aqui-enlace'>aquí</a></strong></p>";
                     echo "</div>";
                 }
 

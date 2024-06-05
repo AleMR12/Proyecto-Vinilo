@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2024 at 11:18 AM
+-- Generation Time: Jun 03, 2024 at 09:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,7 +34,6 @@ CREATE TABLE `artistas` (
   `Apellido1` varchar(20) NOT NULL,
   `Apellido2` varchar(20) NOT NULL,
   `Descripción` varchar(2000) NOT NULL,
-  `FechaNacimiento` date DEFAULT NULL,
   `Foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -42,16 +41,47 @@ CREATE TABLE `artistas` (
 -- Dumping data for table `artistas`
 --
 
-INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apellido2`, `Descripción`, `FechaNacimiento`, `Foto`) VALUES
-(1, 'Tote King', 'Manuel', 'González', 'Rodríguez', 'Conocido artísticamente como Tote King, es un rapero español nacido el 13 de diciembre de 1978 en Sevilla. Es uno de los referentes más destacados del rap en España y ha dejado una huella significativa en la escena musical del país.', NULL, '../../Mi-Proyecto/Imagenes/BD/Tote.jpg'),
-(3, 'Cruz Cafuné', 'Carlos', 'Bruñas', 'Zamorín', 'El talentoso rapero originario de las Islas Canarias, destaca por su estilo fresco y auténtico. Con letras que exploran la vida urbana y la juventud, su música fusiona el rap con influencias de R&B y reggae, creando un sonido único y atrapante. Con un enfoque genuino y letras reflexivas, Cruz Cafuné cautiva a su audiencia con su autenticidad y pasión por la música.', NULL, '../../Mi-Proyecto/Imagenes/BD/Cruzzi.jpg'),
-(4, 'Hoke', ' Héctor', ' ', ' ', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Hoke.jpg'),
-(5, 'C. Tangana', 'Antón', 'Álvarez', 'Alfaro', '', NULL, '../../Mi-Proyecto/Imagenes/BD/CTangana.jpg'),
-(6, 'SFDK', 'Saturnino ', 'Rey', 'García', 'SFDK, acrónimo de \"Siempre Fuertes De Conciencia\", es un dúo de rap formado en Sevilla, España, en 1993 por Zatu y Acción Sánchez. Han sido pioneros del rap en español y han dejado una marca indeleble en la escena hip-hop de habla hispana con su estilo único y letras profundas.', NULL, '../../Mi-Proyecto/Imagenes/BD/SFDK.jpg'),
-(7, 'Abhir ', 'Abhir ', 'Hathiramani', ' ', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Abhir.jpg'),
-(8, 'Kaze', 'Cristian ', 'Carrión', ' Chacón', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Kaze.jpg'),
-(9, 'Fernando Costa', 'Fernando ', 'Costa ', 'Morales', '', NULL, '../../Mi-Proyecto/Imagenes/BD/Fernandito.jpg'),
-(10, 'Kase O', 'Javier ', 'Ibarra ', 'Ramos', '', NULL, '../../Mi-Proyecto/Imagenes/BD/kase.jpg');
+INSERT INTO `artistas` (`ID`, `Nombre_Artistico`, `Nombre`, `Apellido1`, `Apellido2`, `Descripción`, `Foto`) VALUES
+(1, 'Tote King', 'Manuel', 'González', 'Rodríguez', 'Icono del rap español reconocido por su ingenio lírico y su capacidad para narrar historias vívidas a través de sus canciones. Conocido por su estilo único y su habilidad para combinar letras inteligentes con ritmos pegadizos, Tote King ha dejado una marca indeleble en la escena musical española. Desde sus primeros trabajos con el grupo \"La Alta Escuela\" hasta su carrera en solitario, ha sido aclamado por la crítica y ha ganado una base de seguidores leales. Sus álbumes, como \"El lado oscuro de Ghandi\", \"Un Tipo Cualquiera\" y \"78\", exploran una amplia gama de temas, desde la vida cotidiana hasta la política y la cultura. En su ya último álbum, \"Luces Fuera\", demuestra que sigue siendo una figura influyente en el panorama del rap español, destacando por su habilidad para evolucionar y mantenerse relevante a lo largo de los años.', '../../Mi-Proyecto/Imagenes/BD/Tote.jpg'),
+(3, 'Cruz Cafuné', 'Carlos', 'Bruñas', 'Zamorín', 'El talentoso rapero de las Islas Canarias se destaca por su estilo fresco y auténtico que ha conquistado la escena musical. Sus letras, que exploran la vida urbana y la juventud, están impregnadas de un profundo sentido de autenticidad y honestidad. Fusionando el rap con influencias de R&B y reggae, crea un sonido único y atrapante que resuena en sus seguidores. Con unas liricas descriptivas que a menudo hablan sobre su situación personal, Cruz Cafuné cautiva a su audiencia, transmitiendo su pasión por la música y creando un antes y un después en la música canaria, siendo el guía de muchos artistas como para Quevedo o Lucho RK.', '../../Mi-Proyecto/Imagenes/BD/Cruzzi.jpg'),
+(4, 'Hoke', ' Héctor', ' ', ' ', 'Si hay que hablar de un rookie, artista revelación, en el panorama del rap español su nombre es Hoke. A sus 26 años se consagra como una de las grandes promesas de habla hispana. Sin una multinacional, ni grandes distribuidoras detrás ha conseguido hacerse un hueco entre los artistas más laureados por los oyentes, y por los propios artistas. Hoke se ha consagrado este año como uno de los referentes de la “nueva” escena del rap en España. Mucho futuro por delante (y sobre todo presente) y proyectos nuevos acompañarán al valenciano en su carrera “en el barrio cogiendo cardio” o “repitiendo cuarto”.', '../../Mi-Proyecto/Imagenes/BD/Hoke.jpg'),
+(5, 'C. Tangana', 'Antón', 'Álvarez', 'Alfaro', 'Es un reconocido cantante, compositor y productor musical español. Con un estilo único que fusiona el rap, el trap y elementos de otros géneros, C. Tangana ha dejado una marca indeleble en la escena musical contemporánea. Sus letras provocativas y su habilidad para abordar temas sociales y personales con una perspectiva fresca y directa lo han convertido en una figura destacada en la industria. Con álbumes aclamados como \"El Madrileño\" y colaboraciones con artistas de renombre internacional, C. Tangana continúa desafiando las expectativas y consolidándose como uno de los artistas más influyentes de la música urbana en España y más allá.', '../../Mi-Proyecto/Imagenes/BD/CTangana.jpg'),
+(6, 'SFDK', 'Saturnino ', 'Rey', 'García', 'SFDK, acrónimo de \"Siempre Fuertes De Conciencia\", es un dúo de rap formado en Sevilla, España, en 1993 por Zatu y Acción Sánchez. Han sido pioneros del rap en español y han dejado una marca indeleble en la escena hip-hop de habla hispana con su estilo único.  Su música aborda una amplia gama de temas sociales, políticos y personales, fusionando líricas ingeniosas con ritmos innovadores. Con un estilo único y energético, SFDK ha ganado un seguimiento devoto y ha influido significativamente en la evolución del rap español contemporáneo.', '../../Mi-Proyecto/Imagenes/BD/SFDK.jpg'),
+(7, 'Abhir ', 'Abhir ', 'Hathiramani', ' ', 'Abhir es un artista indo-canario que se abre paso y deja huella gracias a la pureza de su carácter y visión artística. Con su naturaleza bilingüe, encontró inspiración en la escena de Toronto y el rap estadounidense. Consigue llevarse estos sonidos a su estilo, dándole una vuelta al cómo cuenta su identidad, su origen y toda su herencia cultural.\r\nComo si de un pintor se tratase, Abhir utiliza sus letras para crear paisajes completamente descriptivos que fusiona con elementos del trap, R&B y electrónica, con pura maestría. Abhir ha destacado gracias a su enfoque artístico genuino y su habilidad para transmitir emociones auténticas a través de su música. Su talento y su capacidad para fusionar géneros musicales le han permitido dejar una marca significativa en el mercado.', '../../Mi-Proyecto/Imagenes/BD/Abhir.jpg'),
+(8, 'Kaze', 'Cristian ', 'Carrión', ' Chacón', 'Es un rapero y productor musical español que lleva en la escena hip hop de su país desde 2007. Nació el 6 de junio de 1993 en Cartagena, España. Antes de empezar con el rap escribía trovos, que son un tipo de poemas que se acompañan con guitarra. Desde sus inicios en la música ya gozaba con cierto reconocimiento de modo que a la edad de 16 años ya empezaba a formar parte de carteles con otros grandes exponentes de la escena nacional de aquel entonces como Gordo Master, Duo Kie, Piezas, Xhelazz o Sho-Hai. Actualmente es considerado uno de los mejores raperos, tanto de su ciudad natal Cartagena, como en el panorama nacional. Una de las tantas razones por las que también se le conoce es por su increíble doble tempo en DAMN, una radio de hip hop argentina. No estamos seguros si batió algún record, pero como mínimo estuvo bastante cerca.', '../../Mi-Proyecto/Imagenes/BD/Kaze.jpg'),
+(9, 'Fernando Costa', 'Fernando ', 'Costa ', 'Morales', 'Nació en 1995 en Ibiza y actualmente es uno de los raperos españoles que más duro está golpeando en la escena. Tras la salida de su primer disco, Yipiyou, su carrera musical no ha hecho nada más que crecer a pasos agigantados. El 16 de marzo finalizó la exitosa gira de dicho disco, en la cual recorrió prácticamente toda España con soldouts en casi todas las salas. Además del disco mencionado, también cabe destacar un gran número de canciones en solitario, como Malamanera o Warriors entre otras muchas, y en colaboración con, por ejemplo, Ayax y Prok, Natos y Waor o Sacrificio y Pasta.', '../../Mi-Proyecto/Imagenes/BD/Fernandito.jpg'),
+(10, 'Kase O', 'Javier ', 'Ibarra ', 'Ramos', 'Miembro, junto con Sho-Hai (Hate), Lírico y R de Rumba, del mítico grupo Violadores del verso (Doble  V). Natural del barrio de la Jota en Zaragoza, se inicia en el mundo del rap por su hermano mayor Brutal, miembro de grupo Gangsta Squad junto con Lírico, y con 13 años empieza a hacer ruido con su primera maqueta, en cinta de casete, Rompecabezas. Dos años más tarde publicaría su segunda maqueta Dos rombos, que incluía el tema Soy de Aragón. Con Violadores (Doble V), Kase.O alcanza su madurez artística y la fama internacional. Sacarían 7 álbumes hasta 2006, siendo el primer grupo de rap español en sacar DVDs de conciertos. Desde 2009 el grupo está inactivo, pero cada miembro sigue con su carrera en solitario.', '../../Mi-Proyecto/Imagenes/BD/kase.jpg');
+
+--
+-- Triggers `artistas`
+--
+DELIMITER $$
+CREATE TRIGGER `after_delete_artistas` AFTER DELETE ON `artistas` FOR EACH ROW BEGIN
+    DELETE FROM `copia_seguridad_mv`.`artistas`
+    WHERE ID = OLD.ID;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_insert_artistas` AFTER INSERT ON `artistas` FOR EACH ROW BEGIN
+    INSERT INTO `copia_seguridad_mv`.`artistas` 
+    VALUES (NEW.ID, NEW.Nombre_Artistico, NEW.Nombre, NEW.Apellido1, NEW.Apellido2, NEW.Descripción, NEW.Foto);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_update_artistas` AFTER UPDATE ON `artistas` FOR EACH ROW BEGIN
+    UPDATE `copia_seguridad_mv`.`artistas`
+    SET Nombre_Artistico = NEW.Nombre_Artistico, 
+        Nombre = NEW.Nombre, 
+        Apellido1 = NEW.Apellido1, 
+        Apellido2 = NEW.Apellido2, 
+        Descripción = NEW.Descripción, 
+        Foto = NEW.Foto
+    WHERE ID = NEW.ID;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -65,6 +95,34 @@ CREATE TABLE `carrito` (
   `id_producto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Triggers `carrito`
+--
+DELIMITER $$
+CREATE TRIGGER `after_delete_carrito` AFTER DELETE ON `carrito` FOR EACH ROW BEGIN
+    DELETE FROM `copia_seguridad_mv`.`carrito`
+    WHERE id_carrito = OLD.id_carrito;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_insert_carrito` AFTER INSERT ON `carrito` FOR EACH ROW BEGIN
+    INSERT INTO `copia_seguridad_mv`.`carrito` 
+    VALUES (NEW.id_carrito, NEW.id_usuario, NEW.id_producto, NEW.cantidad);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_update_carrito` AFTER UPDATE ON `carrito` FOR EACH ROW BEGIN
+    UPDATE `copia_seguridad_mv`.`carrito`
+    SET id_usuario = NEW.id_usuario, 
+        id_producto = NEW.id_producto, 
+        cantidad = NEW.cantidad
+    WHERE id_carrito = NEW.id_carrito;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -93,7 +151,41 @@ INSERT INTO `detalles_pedidos` (`id_pedido`, `ID`, `id_producto`, `cantidad`, `p
 (5, 9, 20, 2, 15),
 (6, 10, 1, 1, 20),
 (6, 11, 3, 1, 8),
-(7, 12, 1, 2, 20);
+(7, 12, 1, 2, 20),
+(9, 15, 1, 3, 20),
+(10, 16, 1, 3, 20),
+(10, 17, 2, 1, 12),
+(11, 18, 1, 1, 20),
+(11, 19, 2, 1, 12);
+
+--
+-- Triggers `detalles_pedidos`
+--
+DELIMITER $$
+CREATE TRIGGER `after_delete_detalles_pedidos` AFTER DELETE ON `detalles_pedidos` FOR EACH ROW BEGIN
+    DELETE FROM `copia_seguridad_mv`.`detalles_pedidos`
+    WHERE ID = OLD.ID;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_insert_detalles_pedidos` AFTER INSERT ON `detalles_pedidos` FOR EACH ROW BEGIN
+    INSERT INTO `copia_seguridad_mv`.`detalles_pedidos` 
+    VALUES (NEW.id_pedido, NEW.ID, NEW.id_producto, NEW.cantidad, NEW.precio);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_update_detalles_pedidos` AFTER UPDATE ON `detalles_pedidos` FOR EACH ROW BEGIN
+    UPDATE `copia_seguridad_mv`.`detalles_pedidos`
+    SET id_pedido = NEW.id_pedido, 
+        id_producto = NEW.id_producto, 
+        cantidad = NEW.cantidad,
+        precio = NEW.precio
+    WHERE ID = NEW.ID;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -130,6 +222,38 @@ INSERT INTO `discos` (`ID`, `Nombre`, `Descripción`, `Precio`, `Existencias`, `
 (19, 'Tirititando', 'El nuevo largo de Fernando es un sólido álbum, donde el Ibicenco prueba con nuevos ritmos y sigue en forma en cuanto a barras se refiere. Este disco confirma a Fernando como uno de los exponentes más importantes del rap patrio en la actualidad. ', 25, 80, '../../Mi-Proyecto/Imagenes/BD/ViniloTiritirando.png', 'spotify:album:6DfZ9xZKkGM2GmvSz2mIw3', 9),
 (20, 'Moonlight922', 'Cruz Cafuné brilla más en libertad, y las producciones de la mixtape (hermanas de las del “Bruno” de Choclock, artífice junto a KIDDO, Dano y Lex Luthorz, entre otros, del sonido de \"Moonlight922\") respiran y dejan el espacio necesario para que el canario desborde y se confirme, a nivel de fraseo, manejo de códigos, lírica, versatilidad y storytelling, como uno de los mejores de su generación.', 15, 30, 'C:/xampp/htdocs/Proyectos/Mi-Proyecto/Imagenes/BD/ViniloMoonlight.png', 'spotify:album:7z44Enk09spyCdKwxPJ5xG', 3);
 
+--
+-- Triggers `discos`
+--
+DELIMITER $$
+CREATE TRIGGER `after_delete_discos` AFTER DELETE ON `discos` FOR EACH ROW BEGIN
+    DELETE FROM `copia_seguridad_mv`.`discos`
+    WHERE ID = OLD.ID;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_insert_discos` AFTER INSERT ON `discos` FOR EACH ROW BEGIN
+    INSERT INTO `copia_seguridad_mv`.`discos` 
+    VALUES (NEW.ID, NEW.Nombre, NEW.Descripción, NEW.Precio, NEW.Existencias, NEW.Foto, NEW.EnlaceSpotify, NEW.ID_Artista);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_update_discos` AFTER UPDATE ON `discos` FOR EACH ROW BEGIN
+    UPDATE `copia_seguridad_mv`.`discos`
+    SET Nombre = NEW.Nombre, 
+        Descripción = NEW.Descripción, 
+        Precio = NEW.Precio, 
+        Existencias = NEW.Existencias, 
+        Foto = NEW.Foto, 
+        EnlaceSpotify = NEW.EnlaceSpotify, 
+        ID_Artista = NEW.ID_Artista
+    WHERE ID = NEW.ID;
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -153,7 +277,39 @@ INSERT INTO `pedidos` (`id_pedido`, `id_usuario`, `fecha`, `estado`, `total`) VA
 (4, 2, '2024-05-15 08:55:30', 'Pagado', 38.00),
 (5, 2, '2024-05-16 07:57:44', 'Pagado', 42.00),
 (6, 3, '2024-05-16 08:04:35', 'Pagado', 28.00),
-(7, 2, '2024-05-18 18:59:54', 'Pagado', 40.00);
+(7, 2, '2024-05-18 18:59:54', 'Pagado', 40.00),
+(9, 2, '2024-05-28 11:42:30', 'Pagado', 60.00),
+(10, 2, '2024-05-28 14:38:13', 'Pagado', 72.00),
+(11, 2, '2024-06-01 15:20:22', 'Pagado', 32.00);
+
+--
+-- Triggers `pedidos`
+--
+DELIMITER $$
+CREATE TRIGGER `after_delete_pedidos` AFTER DELETE ON `pedidos` FOR EACH ROW BEGIN
+    DELETE FROM `copia_seguridad_mv`.`pedidos`
+    WHERE id_pedido = OLD.id_pedido;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_insert_pedidos` AFTER INSERT ON `pedidos` FOR EACH ROW BEGIN
+    INSERT INTO `copia_seguridad_mv`.`pedidos` 
+    VALUES (NEW.id_pedido, NEW.id_usuario, NEW.fecha, NEW.estado, NEW.total);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_update_pedidos` AFTER UPDATE ON `pedidos` FOR EACH ROW BEGIN
+    UPDATE `copia_seguridad_mv`.`pedidos`
+    SET id_usuario = NEW.id_usuario, 
+        fecha = NEW.fecha, 
+        estado = NEW.estado,
+        total = NEW.total
+    WHERE id_pedido = NEW.id_pedido;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -180,6 +336,36 @@ INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido1`, `Apellido2`, `Correo`, `Con
 (3, 'Javier', 'Martin', 'Rodriguez', 'Javi10@gmail.com', '$2y$10$LZxnVrHHHerAcDjeyg8TE.M8a95NxInYNsKohQZEfHfgn1XiWgulS'),
 (4, 'Teresa', 'Rodriguez', 'Garrido', 'tere12@gmail.com', '$2y$10$wb5gktiWlssTgd6s6zvv..Y9rnyPnjCRJeA3KpyJ70xXnn3U2J9oC'),
 (5, 'Ricardo', 'Gironda', 'Cuéllar', 'Richi20@gmail.com', '$2y$10$BD6l4JJFcqRZqPbKSf.uo.Qp7VioG.ZZtg6JVNclbNEvKBSDBxg9u');
+
+--
+-- Triggers `usuarios`
+--
+DELIMITER $$
+CREATE TRIGGER `after_delete_usuarios` AFTER DELETE ON `usuarios` FOR EACH ROW BEGIN
+    DELETE FROM `copia_seguridad_mv`.`usuarios`
+    WHERE ID = OLD.ID;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_insert_usuarios` AFTER INSERT ON `usuarios` FOR EACH ROW BEGIN
+    INSERT INTO `copia_seguridad_mv`.`usuarios` 
+    VALUES (NEW.ID, NEW.Nombre, NEW.Apellido1, NEW.Apellido2, NEW.Correo, NEW.Contraseña);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_update_usuarios` AFTER UPDATE ON `usuarios` FOR EACH ROW BEGIN
+    UPDATE `copia_seguridad_mv`.`usuarios`
+    SET Nombre = NEW.Nombre, 
+        Apellido1 = NEW.Apellido1, 
+        Apellido2 = NEW.Apellido2,
+        Correo = NEW.Correo,
+        Contraseña = NEW.Contraseña
+    WHERE ID = NEW.ID;
+END
+$$
+DELIMITER ;
 
 --
 -- Indexes for dumped tables
@@ -247,19 +433,19 @@ ALTER TABLE `carrito`
 -- AUTO_INCREMENT for table `detalles_pedidos`
 --
 ALTER TABLE `detalles_pedidos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
